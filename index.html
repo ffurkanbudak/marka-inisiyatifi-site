@@ -53,7 +53,7 @@
         /* Arkaplan Efektleri */
         .bg-stars {
             background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-            background-size: 40px 40px; /* Mobilde daha sıkı */
+            background-size: 40px 40px;
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
 
@@ -87,7 +87,7 @@
         }
 
         /* Scrollbar */
-        .custom-scroll::-webkit-scrollbar { height: 4px; } /* Mobilde daha ince */
+        .custom-scroll::-webkit-scrollbar { height: 4px; }
         .custom-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 10px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
 
@@ -122,7 +122,6 @@
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group z-50">
                 <div class="w-8 h-8 md:w-10 md:h-10 relative rounded-full overflow-hidden border border-white/20 group-hover:border-white/60 transition duration-300 bg-black">
-                    <!-- Logo Resminiz -->
                     <img src="logo.png" alt="Logo" class="w-full h-full object-cover scale-105" onerror="this.src='https://ui-avatars.com/api/?name=mi&background=000000&color=ffffff&bold=true&font-size=0.5';">
                 </div>
                 <span class="font-bold text-white text-sm tracking-wide group-hover:text-gray-300 transition">Marka İnisiyatifi</span>
@@ -149,7 +148,7 @@
             </button>
         </div>
         
-        <!-- Mobile Menu Panel (Fullscreen Overlay) -->
+        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden">
             <a href="#neden-biz" class="text-xl font-light text-gray-300 hover:text-white mobile-link">Neden Biz?</a>
             <a href="#neler-yapiyoruz" class="text-xl font-light text-gray-300 hover:text-white mobile-link">Faaliyetler</a>
@@ -177,9 +176,9 @@
                     <span class="font-serif italic text-gray-300">yeniden düşün.</span>
                 </h1>
 
-                <!-- Subtitle -->
+                <!-- Subtitle (Güncellendi) -->
                 <p class="text-gray-400 text-sm md:text-lg max-w-lg mx-auto mb-8 md:mb-10 font-light leading-relaxed px-4">
-                    Öğrenmek, anlatmak ve üretmek isteyenler için özgür bir alan. <br class="hidden md:block">İnisiyatif alın, değişimi yönlendirin.
+                    Öğrenmek, anlatmak ve üretmek isteyenler için özgür bir alan. <br class="hidden md:block">İnisiyatif alın, değişimi yönlendir.
                 </p>
 
                 <!-- Input Form -->
@@ -202,13 +201,12 @@
             </div>
         </section>
 
-        <!-- HOOK SECTION -->
+        <!-- HOOK SECTION (Metin Kaldırıldı) -->
         <section class="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
             <div class="max-w-3xl mx-auto px-6 text-center">
                 <p class="text-xl md:text-3xl font-light text-white leading-normal">
                     "Brand Finance’a göre, 500 global marka arasında bir <span class="font-serif italic border-b border-white/30 text-white pb-1">Türk markası</span> yer almıyor."
                 </p>
-                <p class="mt-6 md:mt-8 text-xs font-mono text-gray-500">// BU TABLOYU DEĞİŞTİRMEK İÇİN BİR ARAYA GELİYORUZ.</p>
             </div>
         </section>
 
@@ -225,7 +223,10 @@
                         <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full group-hover:bg-blue-500/20 transition duration-700"></div>
                         <div>
                             <div class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:bg-white group-hover:text-black transition"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <h3 class="text-xl md:text-2xl font-serif italic mb-3">Holistik Öğrenme</h3>
+                            
+                            <!-- GÜNCELLEME: Holistik -> Derin -->
+                            <h3 class="text-xl md:text-2xl font-serif italic mb-3">Derin Öğrenme</h3>
+                            
                             <p class="text-sm text-gray-400 font-light leading-relaxed">Marka stratejisi, hikayesi ve deneyim tasarımı üzerine derinlemesine içgörüler edinin.</p>
                         </div>
                     </div>
@@ -283,7 +284,6 @@
         <section id="mentors" class="py-16 md:py-24 relative">
             <div class="max-w-7xl mx-auto px-4 md:px-6">
                 <div class="grid lg:grid-cols-12 gap-8 md:gap-12">
-                    <!-- Sol Taraf (Sticky on Desktop) -->
                     <div class="lg:col-span-4 lg:sticky lg:top-32 h-fit mb-8 lg:mb-0">
                         <span class="text-[10px] tracking-[0.3em] uppercase text-gray-500 block mb-4">Rehberler</span>
                         <h2 class="text-3xl md:text-5xl font-light text-white mb-6">
@@ -297,16 +297,13 @@
                         </a>
                     </div>
 
-                    <!-- Sağ Taraf (Scrollable) -->
                     <div class="lg:col-span-8 space-y-12">
                         <div>
                             <div class="flex items-end justify-between mb-4">
                                 <h3 class="text-lg font-serif italic text-white pl-1">Mentörler</h3>
                                 <i class="fa-solid fa-arrow-right-long text-gray-600"></i>
                             </div>
-                            <!-- Kartlar Container -->
                             <div class="flex gap-4 overflow-x-auto custom-scroll pb-6 snap-x snap-mandatory">
-                                <!-- Mentor 1 -->
                                 <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -317,7 +314,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Mentor 2 -->
                                 <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1573496359-136d4755f136?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -328,7 +324,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Mentor 3 -->
                                 <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -385,9 +380,9 @@
             </div>
         </section>
 
-        <!-- SSS -->
+        <!-- MERAK EDİLENLER (BAŞLIK DEĞİŞTİ) -->
         <section id="sss" class="py-16 md:py-24 max-w-2xl mx-auto px-6">
-            <h2 class="text-2xl font-light text-center text-white mb-12">Sıkça <span class="font-serif italic">Sorulan Sorular</span></h2>
+            <h2 class="text-2xl font-light text-center text-white mb-12">Merak <span class="font-serif italic">Edilenler</span></h2>
             <div class="space-y-2">
                 <div class="border-b border-white/10">
                     <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
@@ -413,7 +408,7 @@
             </div>
         </section>
 
-        <!-- İLETİŞİM -->
+        <!-- İLETİŞİM (GÜNCELLENDİ: EMAIL LABEL, ADRES) -->
         <section id="iletisim" class="py-16 md:py-24 px-6 bg-white/[0.02] relative">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                 <div>
@@ -424,8 +419,10 @@
                          <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-white/30 transition">
                             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white shrink-0"><i class="fa-regular fa-envelope"></i></div>
                             <div class="overflow-hidden">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-white">Email</h4>
-                                <p class="text-xs text-gray-400 truncate">merhaba@markainsiyatifi.com</p>
+                                <!-- Güncel: E-mail Adresimiz -->
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-white">E-mail Adresimiz</h4>
+                                <!-- Güncel: info@markainisiyatifi.com -->
+                                <p class="text-xs text-gray-400 truncate">info@markainisiyatifi.com</p>
                             </div>
                          </div>
                     </div>
@@ -495,21 +492,20 @@
         // Mobile Menu Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link'); // Mobil linklere tıklanınca kapanması için
+        const mobileLinks = document.querySelectorAll('.mobile-link'); 
 
         if(mobileBtn && mobileMenu){
             mobileBtn.addEventListener('click', () => {
                 const isHidden = mobileMenu.classList.contains('translate-x-full');
                 if(isHidden) {
                     mobileMenu.classList.remove('translate-x-full');
-                    document.body.style.overflow = 'hidden'; // Sayfa kaydırmayı engelle
+                    document.body.style.overflow = 'hidden'; 
                 } else {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = 'auto';
                 }
             });
 
-            // Linklere tıklanınca menüyü kapat
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
@@ -523,18 +519,6 @@
             const content = button.nextElementSibling;
             const icon = button.querySelector('span:last-child');
             
-            // Mobilde diğer açık olanları kapatmak isterseniz:
-            /*
-            document.querySelectorAll('.accordion-content').forEach(c => {
-                if(c !== content) {
-                    c.style.maxHeight = null;
-                    c.classList.remove('active');
-                    const btn = c.previousElementSibling;
-                    if(btn) btn.querySelector('span:last-child').innerText = '+';
-                }
-            });
-            */
-
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
                 content.classList.remove('active');

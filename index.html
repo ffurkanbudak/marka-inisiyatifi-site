@@ -2,19 +2,15 @@
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- Mobil Uyumluluk İçin Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Marka İnisiyatifi | Markalaşma Hareketi</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FONTLAR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
     
-    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <script>
@@ -50,6 +46,7 @@
             background-color: #020202;
             color: #ffffff;
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Arkaplan Efektleri */
@@ -57,6 +54,7 @@
             background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
             background-size: 40px 40px;
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
 
         .horizon-glow {
@@ -93,13 +91,19 @@
         .custom-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 10px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
 
-        /* Input */
+        /* Input - Mobil Zoom Fix */
         .minimal-input {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             transition: all 0.3s;
             border-radius: 0.5rem;
+            font-size: 16px; 
+        }
+        @media (min-width: 768px) {
+            .minimal-input {
+                font-size: 0.875rem;
+            }
         }
         .minimal-input:focus {
             background: rgba(255, 255, 255, 0.06);
@@ -109,7 +113,7 @@
 
         /* Accordion Fix */
         .accordion-content { 
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out; 
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-out; 
             max-height: 0; 
             opacity: 0; 
             overflow: hidden; 
@@ -117,91 +121,120 @@
         .accordion-content.active { 
             opacity: 1; 
         }
+
+        /* --- SENİN EKLEDİĞİN DÜZELTMELER --- */
+        
+        /* GLOBAL RESPONSIVE FIX */
+        html, body {
+            overflow-x: hidden !important;
+        }
+
+        /* HERO RESPONSIVE FIX */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            .horizon-glow {
+                height: 120px;
+                filter: blur(30px);
+            }
+        }
+
+        /* CARDS RESPONSIVE FIX */
+        @media (max-width: 480px) {
+            .glass-card {
+                padding: 1.25rem !important;
+            }
+            .custom-scroll::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        /* GRID OPTIMIZATION */
+        @media (max-width: 768px) {
+            .grid {
+                gap: 1.5rem !important;
+            }
+        }
+
+        /* FOOTER FIX */
+        @media (max-width: 480px) {
+            footer {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
     </style>
 </head>
 <body class="selection:bg-white selection:text-black antialiased font-sans text-base">
 
-    <!-- Arka Plan -->
     <div class="fixed inset-0 bg-stars pointer-events-none z-[-1]"></div>
     <div class="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-50"></div>
 
-    <!-- 1. HEADER -->
     <header class="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/80 border-b border-white/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex justify-between items-center relative z-50">
             
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group z-50">
                 <div class="w-8 h-8 md:w-10 md:h-10 relative rounded-full overflow-hidden border border-white/20 group-hover:border-white/60 transition duration-300 bg-black flex items-center justify-center">
-                    <!-- Logo görseli -->
-                    <img src="logo_transparent.png" alt="Logo" class="w-full h-full object-contain scale-105" onerror="this.src='https://ui-avatars.com/api/?name=mi&background=000000&color=ffffff&bold=true&font-size=0.5';">
-
+                    <img src="logo_transparent.png" alt="Logo" class="w-full h-full object-contain p-1" onerror="this.src='https://ui-avatars.com/api/?name=Mi&background=000000&color=ffffff&bold=true&font-size=0.5';">
                 </div>
                 <span class="font-bold text-white text-sm tracking-wide group-hover:text-gray-300 transition">Marka İnisiyatifi</span>
             </a>
 
-            <!-- Desktop Menu -->
             <nav class="hidden md:flex gap-8 text-sm font-light text-gray-400">
-                <a href="#neden-biz" class="hover:text-white transition">Neden Biz?</a>
-                <a href="#neler-yapiyoruz" class="hover:text-white transition">Faaliyetler</a>
-                <a href="#mentors" class="hover:text-white transition">Mentörler</a>
-                <a href="#iletisim" class="hover:text-white transition">İletişim</a>
+                <a href="#neden-biz" class="hover:text-white transition py-2">Neden Biz?</a>
+                <a href="#neler-yapiyoruz" class="hover:text-white transition py-2">Faaliyetler</a>
+                <a href="#mentors" class="hover:text-white transition py-2">Mentörler</a>
+                <a href="#iletisim" class="hover:text-white transition py-2">İletişim</a>
             </nav>
 
-            <!-- Desktop CTA -->
             <div class="hidden md:block">
                 <a href="#iletisim" class="px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-white/20 rounded-full hover:bg-white hover:text-black transition duration-300">
                     Katıl
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none z-50">
-                <i class="fa-solid fa-bars text-xl"></i>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none z-50 w-10 h-10 flex items-center justify-center rounded-full active:bg-white/10 transition">
+                <i class="fa-solid fa-bars text-xl transition-all duration-300" id="menu-icon"></i>
             </button>
         </div>
         
-        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden">
-            <a href="#neden-biz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link">Neden Biz?</a>
-            <a href="#neler-yapiyoruz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link">Faaliyetler</a>
-            <a href="#mentors" class="text-2xl font-light text-gray-300 hover:text-white mobile-link">Mentörler</a>
-            <a href="#iletisim" class="text-2xl font-light text-gray-300 hover:text-white mobile-link">İletişim</a>
-            <a href="#iletisim" class="px-10 py-4 mt-4 text-base font-bold uppercase tracking-widest border border-white/20 rounded-full bg-white text-black mobile-link">Katıl</a>
+            <a href="#neden-biz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Neden Biz?</a>
+            <a href="#neler-yapiyoruz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Faaliyetler</a>
+            <a href="#mentors" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Mentörler</a>
+            <a href="#iletisim" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">İletişim</a>
+            <a href="#iletisim" class="px-12 py-4 mt-6 text-base font-bold uppercase tracking-widest border border-white/20 rounded-full bg-white text-black mobile-link shadow-lg shadow-white/10">Katıl</a>
         </div>
     </header>
 
     <main>
-        <!-- 2. HERO SECTION -->
-        <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 overflow-hidden">
+        <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-20 overflow-hidden">
             <div class="horizon-glow animate-pulse-slow"></div>
 
             <div class="relative z-10 max-w-4xl mx-auto animate-fade-in-up w-full">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 md:mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 md:mb-8">
                     <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                     <span class="text-[10px] md:text-xs font-medium tracking-widest uppercase text-gray-300">+200 Üye & 20 Mentöre Erişin!</span>
                 </div>
 
-                <!-- Main Title -->
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-sans font-light tracking-tight text-white mb-4 md:mb-6 leading-[1.1]">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-sans font-light tracking-tight text-white mb-6 md:mb-6 leading-[1.15] md:leading-[1.1]">
                     Markalaşmayı <br>
                     <span class="font-serif italic text-gray-300">yeniden düşün.</span>
                 </h1>
 
-                <!-- Subtitle -->
-                <p class="text-gray-400 text-sm md:text-lg max-w-lg mx-auto mb-8 md:mb-10 font-light leading-relaxed px-4">
+                <p class="text-gray-400 text-sm md:text-lg max-w-lg mx-auto mb-8 md:mb-10 font-light leading-relaxed px-2">
                     Öğrenmek, anlatmak ve üretmek isteyenler için özgür bir alan. <br class="hidden md:block">İnisiyatif alın, değişimi yönlendirin.
                 </p>
 
-                <!-- Input Form -->
                 <form id="hero-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 w-full px-2 md:px-0">
-                    <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-white/40 transition">
-                    <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition">
+                    <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full minimal-input px-4 py-3.5 md:py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 transition">
+                    <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3.5 md:py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition active:scale-95 duration-100">
                         Başla
                     </button>
                 </form>
 
-                <!-- Social Proof -->
                 <div class="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 opacity-70 grayscale hover:grayscale-0 transition duration-500">
                     <div class="flex -space-x-3">
                          <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-black" alt="User">
@@ -213,21 +246,19 @@
             </div>
         </section>
 
-        <!-- 3. HOOK SECTION -->
         <section class="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
             <div class="max-w-3xl mx-auto px-6 text-center">
-                <p class="text-xl md:text-3xl font-light text-white leading-normal">
+                <p class="text-xl md:text-3xl font-light text-white leading-relaxed">
                     "Brand Finance’a göre, 500 global marka arasında bir <span class="font-serif italic border-b border-white/30 text-white pb-1">Türk markası</span> yer almıyor."
                 </p>
             </div>
         </section>
 
-        <!-- 4. NEDEN BİZ -->
         <section id="neden-biz" class="py-16 md:py-24 px-4 md:px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/10 pb-6 gap-4 md:gap-0">
-                    <h2 class="text-3xl md:text-4xl font-light">Neden <span class="font-serif italic">Katılmalısın?</span></h2>
-                    <p class="text-xs text-gray-500 max-w-xs text-left md:text-right leading-relaxed">Burada markalaşma trendlerini keşfedebilir ve sektördeki profesyonellerle güçlü bağlantılar kurabilirsin.</p>
+                    <h2 class="text-3xl md:text-4xl font-light w-full">Neden <span class="font-serif italic">Katılmalısın?</span></h2>
+                    <p class="text-xs text-gray-500 max-w-xs text-left md:text-right leading-relaxed w-full md:w-auto">Burada markalaşma trendlerini keşfedebilir ve sektördeki profesyonellerle güçlü bağlantılar kurabilirsin.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -260,7 +291,6 @@
             </div>
         </section>
 
-        <!-- 5. NELER YAPIYORUZ -->
         <section id="neler-yapiyoruz" class="py-16 md:py-24 relative bg-white/[0.01]">
             <div class="max-w-7xl mx-auto px-4 md:px-6">
                 <h2 class="text-3xl md:text-4xl font-light text-center mb-12 md:mb-16">Neler <span class="font-serif italic">Yapıyoruz?</span></h2>
@@ -289,8 +319,7 @@
             </div>
         </section>
 
-        <!-- 6. MENTÖRLER (Horizontal Scroll) -->
-        <section id="mentors" class="py-16 md:py-24 relative">
+        <section id="mentors" class="py-16 md:py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 md:px-6">
                 <div class="grid lg:grid-cols-12 gap-8 md:gap-12">
                     <div class="lg:col-span-4 lg:sticky lg:top-32 h-fit mb-8 lg:mb-0">
@@ -305,14 +334,16 @@
                             Hepsini Gör
                         </a>
                     </div>
-                    <div class="lg:col-span-8 space-y-12">
-                        <div>
-                            <div class="flex items-end justify-between mb-4">
+                    <div class="lg:col-span-8 space-y-12 min-w-0"> <div>
+                            <div class="flex items-end justify-between mb-4 px-1">
                                 <h3 class="text-lg font-serif italic text-white pl-1">Mentörler</h3>
-                                <i class="fa-solid fa-arrow-right-long text-gray-600"></i>
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-arrow-left-long text-gray-600"></i>
+                                    <i class="fa-solid fa-arrow-right-long text-white animate-pulse"></i>
+                                </div>
                             </div>
-                            <div class="flex gap-4 overflow-x-auto custom-scroll pb-6 snap-x snap-mandatory">
-                                <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
+                            <div class="flex gap-4 overflow-x-auto custom-scroll pb-6 snap-x snap-mandatory pr-4">
+                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
@@ -322,7 +353,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
+                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1573496359-136d4755f136?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
@@ -332,7 +363,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="min-w-[260px] md:min-w-[280px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0">
+                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
                                     <div class="aspect-[4/3] relative">
                                         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
@@ -349,7 +380,6 @@
             </div>
         </section>
 
-        <!-- 7. ROADMAP -->
         <section id="projeler" class="py-16 md:py-24 relative overflow-hidden bg-white/[0.01]">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <h2 class="text-3xl font-light text-center mb-12 md:mb-16">Gelecek <span class="font-serif italic">Projeler</span></h2>
@@ -378,9 +408,7 @@
             </div>
         </section>
 
-        <!-- YENİ BÖLÜM: İLHAM VEREN HİKAYELER -->
         <section class="py-24 relative overflow-hidden">
-            <!-- Arka Plan Işığı -->
             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
             <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -399,7 +427,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Kutu 1 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full group-hover:bg-blue-500/20 transition"></div>
                         <div>
@@ -423,7 +450,6 @@
                         </div>
                     </div>
 
-                    <!-- Kutu 2 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 blur-[40px] rounded-full group-hover:bg-purple-500/20 transition"></div>
                         <div>
@@ -447,7 +473,6 @@
                         </div>
                     </div>
 
-                    <!-- Kutu 3 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                          <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/10 blur-[40px] rounded-full group-hover:bg-green-500/20 transition"></div>
                         <div>
@@ -471,7 +496,6 @@
                         </div>
                     </div>
 
-                    <!-- Kutu 4 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                         <div>
                             <div class="mb-6 flex items-center gap-3">
@@ -494,7 +518,6 @@
                         </div>
                     </div>
 
-                    <!-- Kutu 5 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                         <div>
                             <div class="mb-6 flex items-center gap-3">
@@ -517,7 +540,6 @@
                         </div>
                     </div>
 
-                    <!-- Kutu 6 -->
                     <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
                         <div>
                             <div class="mb-6 flex items-center gap-3">
@@ -544,45 +566,42 @@
             </div>
         </section>
 
-        <!-- 8. İSTATİSTİKLER -->
         <section class="py-16 md:py-20 border-y border-white/5 bg-deep">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div><h3 class="text-3xl font-serif italic text-white mb-1">%90</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Farkındalık</p></div>
-                <div><h3 class="text-3xl font-serif italic text-white mb-1">%82</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Yeni İş Fırsatı</p></div>
-                <div><h3 class="text-3xl font-serif italic text-white mb-1">%76</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Kariyer Adımı</p></div>
+                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%90</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Farkındalık</p></div>
+                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%82</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Yeni İş Fırsatı</p></div>
+                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%76</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Kariyer Adımı</p></div>
                 <div><h3 class="text-3xl font-serif italic text-white mb-1">200+</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Aktif Üye</p></div>
             </div>
         </section>
 
-        <!-- 9. SSS (MERAK EDİLENLER) -->
         <section id="sss" class="py-16 md:py-24 max-w-2xl mx-auto px-6">
             <h2 class="text-2xl font-light text-center text-white mb-12">Merak <span class="font-serif italic">Edilenler</span></h2>
             <div class="space-y-2">
                 <div class="border-b border-white/10">
                     <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white">Nasıl Üye Olunur?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white">+</span>
+                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Nasıl Üye Olunur?</span>
+                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
                     </button>
                     <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Üyelik için web sitemizdeki başvuru formunu doldurmanız yeterlidir.</div>
                 </div>
                 <div class="border-b border-white/10">
                     <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white">Kimler Üye Olabilir?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white">+</span>
+                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Kimler Üye Olabilir?</span>
+                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
                     </button>
                     <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Markalaşmaya ilgi duyan herkes.</div>
                 </div>
                 <div class="border-b border-white/10">
                     <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white">Üyelik Ücretli Mi?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white">+</span>
+                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Üyelik Ücretli Mi?</span>
+                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
                     </button>
                     <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Temel üyelik ücretsizdir.</div>
                 </div>
             </div>
         </section>
 
-        <!-- 10. İLETİŞİM -->
         <section id="iletisim" class="py-16 md:py-24 px-6 bg-white/[0.02] relative">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                 <div>
@@ -604,22 +623,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             <div>
                                 <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">İsim</label>
-                                <input type="text" name="name" required class="w-full minimal-input placeholder-gray-700 text-sm">
+                                <input type="text" name="name" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3">
                             </div>
                             <div>
                                 <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Soyad</label>
-                                <input type="text" name="surname" required class="w-full minimal-input placeholder-gray-700 text-sm">
+                                <input type="text" name="surname" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3">
                             </div>
                         </div>
                         <div>
                             <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">E-Posta</label>
-                            <input type="email" name="email" required class="w-full minimal-input placeholder-gray-700 text-sm" placeholder="email@ornek.com">
+                            <input type="email" name="email" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3" placeholder="email@ornek.com">
                         </div>
                         <div>
                             <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Mesaj</label>
-                            <textarea name="message" rows="4" required class="w-full minimal-input placeholder-gray-700 text-sm resize-none"></textarea>
+                            <textarea name="message" rows="4" required class="w-full minimal-input placeholder-gray-700 text-sm resize-none py-3 px-3"></textarea>
                         </div>
-                        <button type="submit" id="contact-submit" class="w-full bg-white text-black font-bold py-3 md:py-4 rounded-lg text-xs uppercase tracking-widest hover:bg-gray-200 transition">Gönder</button>
+                        <button type="submit" id="contact-submit" class="w-full bg-white text-black font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-gray-200 transition active:scale-95 duration-100">Gönder</button>
                     </form>
                 </div>
             </div>
@@ -627,16 +646,13 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="pt-16 md:pt-24 pb-12 px-6 relative overflow-hidden">
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-t from-blue-900/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
         <div class="max-w-7xl mx-auto">
-            <!-- Main Box -->
             <div class="glass-card rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-16 border border-white/10 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
                 
                 <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
-                    <!-- Left -->
                     <div class="lg:col-span-5">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/5 mb-6">
                             <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -644,11 +660,10 @@
                         </div>
                         <h3 class="text-2xl md:text-4xl font-serif italic text-white mb-6">Markaların dünyasına erişin!</h3>
                         <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-white/40 transition">
-                            <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition">Katıl</button>
+                            <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full minimal-input px-4 py-3.5 md:py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white/40 transition">
+                            <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3.5 md:py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition active:scale-95">Katıl</button>
                         </form>
                     </div>
-                    <!-- Right (Links) -->
                     <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
                         <div><h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">Platform</h4><ul class="space-y-4 text-sm font-light text-gray-300"><li><a href="#neden-biz">Neden Biz?</a></li><li><a href="#mentors">Mentörler</a></li></ul></div>
                         <div><h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">Kaynaklar</h4><ul class="space-y-4 text-sm font-light text-gray-300"><li><a href="#sss">Merak Edilenler</a></li><li><a href="#projeler">Projeler</a></li></ul></div>
@@ -657,7 +672,6 @@
                 </div>
             </div>
             
-            <!-- Bottom Bar -->
             <div class="mt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6">
                 <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xs text-gray-500 font-mono text-center md:text-left">
                     <span>&copy; 2025 Marka İnisiyatifi</span><span class="hidden md:inline">|</span><a href="#">Gizlilik</a><a href="#">Şartlar</a>
@@ -671,7 +685,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         // 1. LÜTFEN KENDİ FORMSPREE ENDPOINT'İNİZİ BURAYA YAZIN
         const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; 
@@ -729,7 +742,8 @@
         // Mobil Menü
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link'); 
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = document.getElementById('menu-icon');
 
         if(mobileBtn && mobileMenu){
             mobileBtn.addEventListener('click', () => {
@@ -737,9 +751,15 @@
                 if(isHidden) {
                     mobileMenu.classList.remove('translate-x-full');
                     document.body.style.overflow = 'hidden'; 
+                    // İkon değiştir (X yap)
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
                 } else {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = 'auto';
+                    // İkon değiştir (Hamburger yap)
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
                 }
             });
 
@@ -747,6 +767,8 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = 'auto';
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
                 });
             });
         }
@@ -761,6 +783,10 @@
                 content.classList.remove('active');
                 icon.innerText = "+";
             } else {
+                // Diğer açık olanları kapat (Opsiyonel ama daha temiz UX)
+                const allContents = document.querySelectorAll('.accordion-content');
+                const allIcons = document.querySelectorAll('.accordion-content + span'); // Bu seçim yapısı HTML'e göre değişebilir
+                
                 content.style.maxHeight = (content.scrollHeight + 20) + "px";
                 content.classList.add('active');
                 icon.innerText = "-";

@@ -1,644 +1,451 @@
-<!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Marka İnisiyatifi | Markalaşma Hareketi</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        deep: '#020202',
-                        glass: 'rgba(255, 255, 255, 0.03)',
-                        border: 'rgba(255, 255, 255, 0.08)',
-                        primary: '#fff' 
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #020202;
-            color: #ffffff;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Arkaplan Efektleri */
-        .bg-stars {
-            background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-        }
-
-        .horizon-glow {
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120%;
-            max-width: 1200px;
-            height: 200px;
-            background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 70%);
-            border-radius: 100%;
-            filter: blur(40px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Glass Card */
-        .glass-card {
-            background: rgba(20, 20, 20, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(30, 30, 30, 0.6);
-            transform: translateY(-2px);
-        }
-
-        /* Scrollbar */
-        .custom-scroll::-webkit-scrollbar { height: 4px; }
-        .custom-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 10px; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
-
-        /* Input - Mobil Zoom Fix */
-        .minimal-input {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s;
-            border-radius: 0.5rem;
-            font-size: 16px; 
-        }
-        @media (min-width: 768px) {
-            .minimal-input {
-                font-size: 0.875rem;
-            }
-        }
-        .minimal-input:focus {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255,255,255,0.3);
-            outline: none;
-        }
-
-        /* Accordion Fix */
-        .accordion-content { 
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-out; 
-            max-height: 0; 
-            opacity: 0; 
-            overflow: hidden; 
-        }
-        .accordion-content.active { 
-            opacity: 1; 
-        }
-
-        /* --- SENİN EKLEDİĞİN DÜZELTMELER --- */
-        
-        /* GLOBAL RESPONSIVE FIX */
-        html, body {
-            overflow-x: hidden !important;
-        }
-
-        /* HERO RESPONSIVE FIX */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem !important;
-                line-height: 1.2 !important;
-            }
-            .horizon-glow {
-                height: 120px;
-                filter: blur(30px);
-            }
-        }
-
-        /* CARDS RESPONSIVE FIX */
-        @media (max-width: 480px) {
-            .glass-card {
-                padding: 1.25rem !important;
-            }
-            .custom-scroll::-webkit-scrollbar {
-                display: none;
-            }
-        }
-
-        /* GRID OPTIMIZATION */
-        @media (max-width: 768px) {
-            .grid {
-                gap: 1.5rem !important;
-            }
-        }
-
-        /* FOOTER FIX */
-        @media (max-width: 480px) {
-            footer {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-        }
-    </style>
+<html lang="tr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Marka İnisiyatifi | Markalaşma Hareketi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+manrope: ['Manrope', 'sans-serif'],
+},
+colors: {
+deep: '#020202',
+glass: 'rgba(255, 255, 255, 0.03)',
+border: 'rgba(255, 255, 255, 0.08)',
+primary: '#fff'
+},
+animation: {
+'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+'float': 'float 6s ease-in-out infinite',
+},
+keyframes: {
+fadeInUp: {
+'0%': { opacity: '0', transform: 'translateY(20px)' },
+'100%': { opacity: '1', transform: 'translateY(0)' },
+},
+float: {
+'0%, 100%': { transform: 'translateY(0)' },
+'50%': { transform: 'translateY(-10px)' },
+}
+}
+}
+}
+}
+</script>
 </head>
-<body class="selection:bg-white selection:text-black antialiased font-sans text-base">
+<body class="bg-[#020202] selection:bg-white selection:text-black antialiased font-sans text-base overflow-x-hidden text-white">
+    
+    <div class="fixed inset-0 pointer-events-none z-0" style="background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 50px 50px; mask-image: linear-gradient(to bottom, black 30%, transparent 80%); -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 80%);"></div>
+    
+    <div class="fixed top-0 left-0 w-full h-px z-50" style="background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);"></div>
 
-    <div class="fixed inset-0 bg-stars pointer-events-none z-[-1]"></div>
-    <div class="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-50"></div>
-
-    <header class="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/80 border-b border-white/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex justify-between items-center relative z-50">
+    <header class="fixed top-0 w-full z-50 transition-all duration-300" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(2,2,2,0.8); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="sm:px-6 lg:px-8 md:h-20 flex z-50 h-16 max-w-7xl mr-auto ml-auto pr-4 pl-4 relative items-center justify-between">
             
             <a href="#" class="flex items-center gap-3 group z-50">
-                <div class="w-8 h-8 md:w-10 md:h-10 relative rounded-full overflow-hidden border border-white/20 group-hover:border-white/60 transition duration-300 bg-black flex items-center justify-center">
-                    <img src="logo_transparent.png" alt="Logo" class="w-full h-full object-contain p-1" onerror="this.src='https://ui-avatars.com/api/?name=Mi&background=000000&color=ffffff&bold=true&font-size=0.5';">
-                </div>
-                <span class="font-bold text-white text-sm tracking-wide group-hover:text-gray-300 transition">Marka İnisiyatifi</span>
+                <div class="md:w-10 md:h-10 overflow-hidden flex w-9 h-9 rounded-full relative items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.2); background: rgb(0, 0, 0)">
+  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="logo_transparent.png" class="text-gray-50 w-full h-full object-cover rounded-full">
+</div>
+                <span class="hidden sm:block text-sm text-white tracking-tight font-manrope font-medium">Marka İnisiyatifi</span>
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-light text-gray-400">
-                <a href="#neden-biz" class="hover:text-white transition py-2">Neden Biz?</a>
-                <a href="#neler-yapiyoruz" class="hover:text-white transition py-2">Faaliyetler</a>
-                <a href="#mentors" class="hover:text-white transition py-2">Mentörler</a>
-                <a href="#iletisim" class="hover:text-white transition py-2">İletişim</a>
+                <a href="#neden-biz" class="transition-colors duration-200 hover:text-white pt-2 pb-2 font-manrope font-medium">Neden Biz?</a>
+                <a href="#neler-yapiyoruz" class="transition-colors duration-200 py-2 hover:text-white font-manrope font-medium">Faaliyetler</a>
+                
+                <a href="#iletisim" class="transition-colors duration-200 hover:text-white font-medium font-manrope pt-2 pb-2">İletişim</a>
             </nav>
 
             <div class="hidden md:block">
-                <a href="#iletisim" class="px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-white/20 rounded-full hover:bg-white hover:text-black transition duration-300">
+                <a href="#iletisim" class="px-5 py-2.5 text-xs uppercase tracking-wider rounded-full transition-all duration-300 font-manrope font-medium" style="border: 1px solid rgba(255, 255, 255, 0.2); background: none; color: rgb(255, 255, 255);" onmouseover="this.style.background='#fff'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#fff';">
                     Katıl
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none z-50 w-10 h-10 flex items-center justify-center rounded-full active:bg-white/10 transition">
-                <i class="fa-solid fa-bars text-xl transition-all duration-300" id="menu-icon"></i>
+            <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none z-50 w-10 h-10 flex items-center justify-center rounded-full transition-colors text-white" style="background: transparent;" onmouseover="this.style.background='rgba(255,255,255,0.1)';" onmouseout="this.style.background='transparent';">
+                <i data-lucide="menu" class="w-6 h-6" id="menu-icon-open" style="stroke-width: 1.5;"></i>
+                <i data-lucide="x" class="w-6 h-6 hidden" id="menu-icon-close" style="stroke-width: 1.5;"></i>
             </button>
         </div>
         
-        <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden">
-            <a href="#neden-biz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Neden Biz?</a>
-            <a href="#neler-yapiyoruz" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Faaliyetler</a>
-            <a href="#mentors" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">Mentörler</a>
-            <a href="#iletisim" class="text-2xl font-light text-gray-300 hover:text-white mobile-link py-2 w-full text-center">İletişim</a>
-            <a href="#iletisim" class="px-12 py-4 mt-6 text-base font-bold uppercase tracking-widest border border-white/20 rounded-full bg-white text-black mobile-link shadow-lg shadow-white/10">Katıl</a>
+        <div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center space-y-6 transform translate-x-full transition-transform duration-300 ease-out md:hidden" style="background: rgba(2,2,2,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+            <a href="#neden-biz" class="text-2xl mobile-link py-3 px-8 w-full text-center transition-colors text-gray-300 hover:text-white font-manrope font-medium">Neden Biz?</a>
+            <a href="#neler-yapiyoruz" class="text-2xl mobile-link py-3 px-8 w-full text-center transition-colors text-gray-300 hover:text-white font-manrope font-medium">Faaliyetler</a>
+            <a href="#mentors" class="text-2xl mobile-link py-3 px-8 w-full text-center transition-colors text-gray-300 hover:text-white font-manrope font-medium">Mentörler</a>
+            <a href="#iletisim" class="text-2xl mobile-link py-3 px-8 w-full text-center transition-colors text-gray-300 hover:text-white font-manrope font-medium">İletişim</a>
+            <a href="#iletisim" class="px-10 py-4 mt-4 text-base uppercase tracking-wider rounded-full mobile-link transition-transform active:scale-95 bg-white text-black font-manrope font-medium">Katıl</a>
         </div>
     </header>
 
-    <main>
-        <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-20 overflow-hidden">
-            <div class="horizon-glow animate-pulse-slow"></div>
+    <main class="">
+        <section class="min-h-screen flex flex-col md:pt-20 overflow-hidden text-center pt-24 pr-4 pl-4 relative items-center justify-center">
+            <div class="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-48 rounded-full pointer-events-none animate-pulse-slow" style="background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, rgba(99,102,241,0.04) 40%, transparent 70%); filter: blur(60px);"></div>
 
-            <div class="relative z-10 max-w-4xl mx-auto animate-fade-in-up w-full">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 md:mb-8">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-[10px] md:text-xs font-medium tracking-widest uppercase text-gray-300">+200 Üye & 20 Mentöre Erişin!</span>
+            <div class="z-10 animate-fade-in-up w-full max-w-4xl mr-auto ml-auto relative">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8" style="border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); backdrop-filter: blur(8px);">
+                    <span class="w-2 h-2 rounded-full animate-pulse bg-blue-400"></span>
+                    <span class="text-xs tracking-wide uppercase text-gray-300 font-manrope font-medium">+200 Üye &amp; 20 Mentöre Erişin!</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-sans font-light tracking-tight text-white mb-6 md:mb-6 leading-[1.15] md:leading-[1.1]">
-                    Markalaşmayı <br>
-                    <span class="font-serif italic text-gray-300">yeniden düşün.</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 leading-tight text-white font-manrope font-medium">
+                    Markalaşmayı 
+                    <span class="text-gray-300 font-manrope font-medium">yeniden düşün.</span>
                 </h1>
 
-                <p class="text-gray-400 text-sm md:text-lg max-w-lg mx-auto mb-8 md:mb-10 font-light leading-relaxed px-2">
-                    Öğrenmek, anlatmak ve üretmek isteyenler için özgür bir alan. <br class="hidden md:block">İnisiyatif alın, değişimi yönlendirin.
+                <p class="text-base md:text-lg max-w-lg mx-auto mb-10 leading-relaxed px-4 text-gray-400 font-manrope font-medium">
+                    Öğrenmek, anlatmak ve üretmek isteyenler için özgür bir alan. İnisiyatif alın, değişimi yönlendirin.
                 </p>
 
-                <form id="hero-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 w-full px-2 md:px-0">
-                    <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full minimal-input px-4 py-3.5 md:py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 transition">
-                    <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3.5 md:py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition active:scale-95 duration-100">
+                <form id="hero-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 w-full px-4 md:px-0">
+                    <input type="email" name="email" required="" placeholder="E-posta adresiniz" class="w-full px-4 py-3.5 rounded-lg placeholder-gray-500 transition-all duration-200 focus:outline-none text-white" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 16px;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.background='rgba(255,255,255,0.06)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.04)';">
+                    <button type="submit" class="w-full sm:w-auto px-6 py-3.5 rounded-lg text-sm transition-all duration-200 active:scale-95 bg-white text-black hover:bg-gray-100 font-manrope font-medium">
                         Başla
                     </button>
                 </form>
 
-                <div class="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <div class="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 opacity-80">
                     <div class="flex -space-x-3">
-                         <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-black" alt="User">
-                         <img src="https://i.pravatar.cc/100?img=47" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-black" alt="User">
-                         <img src="https://i.pravatar.cc/100?img=12" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-black" alt="User">
+                         <img src="https://i.pravatar.cc/100?img=33" class="w-9 h-9 rounded-full object-cover" style="border: 2px solid #020202;" alt="User">
+                         <img src="https://i.pravatar.cc/100?img=47" class="w-9 h-9 rounded-full object-cover" style="border: 2px solid #020202;" alt="User">
+                         <img src="https://i.pravatar.cc/100?img=12" class="w-9 h-9 rounded-full object-cover" style="border: 2px solid #020202;" alt="User">
+                         <img src="https://i.pravatar.cc/100?img=25" class="w-9 h-9 rounded-full object-cover" style="border: 2px solid #020202;" alt="User">
                     </div>
-                    <p class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-medium">200+ Üye Katıldı</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-manrope font-medium">200+ Üye Katıldı</p>
                 </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500" style="stroke-width: 1.5;"></i>
             </div>
         </section>
 
-        <section class="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+        <section class="md:py-28 pt-20 pb-20" style="border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01)">
             <div class="max-w-3xl mx-auto px-6 text-center">
-                <p class="text-xl md:text-3xl font-light text-white leading-relaxed">
-                    "Brand Finance’a göre, 500 global marka arasında bir <span class="font-serif italic border-b border-white/30 text-white pb-1">Türk markası</span> yer almıyor."
+                <p class="text-xl md:text-2xl lg:text-3xl leading-relaxed text-white font-manrope font-medium">
+                    "Brand Finance'a göre, 500 global marka arasında bir <span class="font-manrope font-medium" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(255, 255, 255, 0.3); padding-bottom: 2px;">Türk markası</span> yer almıyor."
                 </p>
             </div>
         </section>
 
-        <section id="neden-biz" class="py-16 md:py-24 px-4 md:px-6">
+        <section class="md:py-28 md:px-6 pt-20 pr-4 pb-20 pl-4" id="neden-biz">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/10 pb-6 gap-4 md:gap-0">
-                    <h2 class="text-3xl md:text-4xl font-light w-full">Neden <span class="font-serif italic">Katılmalısın?</span></h2>
-                    <p class="text-xs text-gray-500 max-w-xs text-left md:text-right leading-relaxed w-full md:w-auto">Burada markalaşma trendlerini keşfedebilir ve sektördeki profesyonellerle güçlü bağlantılar kurabilirsin.</p>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 pb-6 gap-4" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                    <h2 class="text-3xl md:text-4xl font-manrope font-medium">Neden <span class="font-manrope font-medium">Katılmalısın?</span></h2>
+                    <p class="text-xs text-gray-500 max-w-xs text-left md:text-right leading-relaxed font-manrope font-medium">Burada markalaşma trendlerini keşfedebilir ve sektördeki profesyonellerle güçlü bağlantılar kurabilirsin.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-card md:col-span-1 md:row-span-2 rounded-2xl p-6 md:p-8 flex flex-col justify-between group relative overflow-hidden min-h-[250px]">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full group-hover:bg-blue-500/20 transition duration-700"></div>
-                        <div>
-                            <div class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:bg-white group-hover:text-black transition"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <h3 class="text-xl md:text-2xl font-serif italic mb-3">Derin Öğrenme</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed">Marka stratejisi, hikayesi ve deneyim tasarımı üzerine derinlemesine içgörüler edinin.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="md:col-span-1 md:row-span-2 rounded-2xl p-7 md:p-8 flex flex-col justify-between group relative overflow-hidden min-h-[280px] transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); transform: translateY(0px);" onmouseover="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)';">
+                        <div class="absolute top-0 right-0 w-40 h-40 rounded-full pointer-events-none transition-all duration-500" style="background: rgba(99,102,241,0.08); filter: blur(50px);"></div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300 text-white" style="border: 1px solid rgba(255,255,255,0.15);">
+                                <i data-lucide="graduation-cap" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl mb-3 tracking-tight font-manrope font-medium">Derin Öğrenme</h3>
+                            <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Marka stratejisi, hikayesi ve deneyim tasarımı üzerine derinlemesine içgörüler edinin.</p>
                         </div>
                     </div>
-                    <div class="glass-card md:col-span-2 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 group relative overflow-hidden">
-                         <div class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center shrink-0 text-white group-hover:bg-white group-hover:text-black transition"><i class="fa-solid fa-user-group"></i></div>
-                         <div>
-                            <h3 class="text-xl font-medium mb-2">Networking</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed max-w-lg">Gerçek projeler üretebileceğiniz vizyoner profesyonellerle tanışın.</p>
+                    
+                    <div class="md:col-span-2 rounded-2xl p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 group relative overflow-hidden transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); transform: translateY(0px);" onmouseover="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)';">
+                         <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 text-white" style="border: 1px solid rgba(255,255,255,0.15);">
+                            <i data-lucide="users" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                         </div>
+                         <div class="">
+                            <h3 class="text-xl mb-2 tracking-tight font-manrope font-medium">Networking</h3>
+                            <p class="text-sm leading-relaxed max-w-lg text-gray-400 font-manrope font-medium">Gerçek projeler üretebileceğiniz vizyoner profesyonellerle tanışın.</p>
                          </div>
                     </div>
-                    <div class="glass-card rounded-2xl p-6 md:p-8 group">
-                         <div class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:bg-white group-hover:text-black transition"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                        <h3 class="text-xl font-medium mb-2">Stratejik Büyüme</h3>
-                        <p class="text-sm text-gray-400 font-light">İşinizi ve kariyerinizi bir üst seviyeye taşıyacak araçlar edinin.</p>
+                    
+                    <div class="rounded-2xl p-7 md:p-8 group transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); transform: translateY(0px);" onmouseover="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)';">
+                         <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300 text-white" style="border: 1px solid rgba(255,255,255,0.15);">
+                            <i data-lucide="trending-up" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                         </div>
+                        <h3 class="text-xl mb-2 tracking-tight font-manrope font-medium">Stratejik Büyüme</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">İşinizi ve kariyerinizi bir üst seviyeye taşıyacak araçlar edinin.</p>
                     </div>
-                    <div class="glass-card rounded-2xl p-6 md:p-8 group">
-                        <div class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:bg-white group-hover:text-black transition"><i class="fa-solid fa-fingerprint"></i></div>
-                       <h3 class="text-xl font-medium mb-2">Kişisel Marka</h3>
-                       <p class="text-sm text-gray-400 font-light">Dijital dünyada güçlü bir kimlik oluşturun.</p>
+                    
+                    <div class="rounded-2xl p-7 md:p-8 group transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); transform: translateY(0px);" onmouseover="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)';">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300 text-white" style="border: 1px solid rgba(255,255,255,0.15);">
+                            <i data-lucide="fingerprint" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                        </div>
+                       <h3 class="text-xl mb-2 tracking-tight font-manrope font-medium">Kişisel Marka</h3>
+                       <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Dijital dünyada güçlü bir kimlik oluşturun.</p>
                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="neler-yapiyoruz" class="py-16 md:py-24 relative bg-white/[0.01]">
+        <section class="md:py-28 pt-20 pb-20 relative" style="background: rgba(255,255,255,0.01)" id="neler-yapiyoruz">
             <div class="max-w-7xl mx-auto px-4 md:px-6">
-                <h2 class="text-3xl md:text-4xl font-light text-center mb-12 md:mb-16">Neler <span class="font-serif italic">Yapıyoruz?</span></h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                    <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition group">
-                        <div class="mb-4 text-2xl text-white group-hover:scale-110 transition duration-300"><i class="fa-solid fa-chalkboard-user"></i></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Eğitim Programları</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Seminerler, webinerler ve strateji eğitimleri.</p>
-                    </div>
-                    <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition group">
-                        <div class="mb-4 text-2xl text-white group-hover:scale-110 transition duration-300"><i class="fa-solid fa-handshake"></i></div>
-                        <h3 class="text-lg font-medium text-white mb-2">İş Birliği</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Profesyonelleri bir araya getirerek fırsatlar yaratıyoruz.</p>
-                    </div>
-                    <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition group">
-                        <div class="mb-4 text-2xl text-white group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bullhorn"></i></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Farkındalık</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Sosyal medya kampanyaları ve etkinlikler.</p>
-                    </div>
-                    <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition group">
-                        <div class="mb-4 text-2xl text-white group-hover:scale-110 transition duration-300"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Mentörlük</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Başarılı iş insanları ile girişimcileri buluşturuyoruz.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="mentors" class="py-16 md:py-24 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 md:px-6">
-                <div class="grid lg:grid-cols-12 gap-8 md:gap-12">
-                    <div class="lg:col-span-4 lg:sticky lg:top-32 h-fit mb-8 lg:mb-0">
-                        <span class="text-[10px] tracking-[0.3em] uppercase text-gray-500 block mb-4">Rehberler</span>
-                        <h2 class="text-3xl md:text-5xl font-light text-white mb-6">
-                            Uzman <br><span class="font-serif italic text-gray-400">Mentörlerimiz.</span>
-                        </h2>
-                        <p class="text-gray-500 font-light text-sm mb-8 leading-relaxed">
-                           Sektör liderleriyle birebir iletişim kurma fırsatı yakalayın.
-                        </p>
-                        <a href="#iletisim" class="inline-flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest border-b border-white/20 pb-1 hover:border-white transition">
-                            Hepsini Gör
-                        </a>
-                    </div>
-                    <div class="lg:col-span-8 space-y-12 min-w-0"> <div>
-                            <div class="flex items-end justify-between mb-4 px-1">
-                                <h3 class="text-lg font-serif italic text-white pl-1">Mentörler</h3>
-                                <div class="flex gap-2">
-                                    <i class="fa-solid fa-arrow-left-long text-gray-600"></i>
-                                    <i class="fa-solid fa-arrow-right-long text-white animate-pulse"></i>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 overflow-x-auto custom-scroll pb-6 snap-x snap-mandatory pr-4">
-                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
-                                    <div class="aspect-[4/3] relative">
-                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
-                                        <div class="absolute bottom-4 left-4">
-                                            <p class="text-white font-medium text-lg">Ahmet Y.</p>
-                                            <p class="text-xs text-gray-400 font-serif italic">Strateji Uzmanı</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
-                                    <div class="aspect-[4/3] relative">
-                                        <img src="https://images.unsplash.com/photo-1573496359-136d4755f136?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
-                                        <div class="absolute bottom-4 left-4">
-                                            <p class="text-white font-medium text-lg">Elif D.</p>
-                                            <p class="text-xs text-gray-400 font-serif italic">Growth Lead</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="min-w-[280px] md:min-w-[300px] snap-center glass-card p-0 rounded-xl overflow-hidden group cursor-pointer border-0 shrink-0">
-                                    <div class="aspect-[4/3] relative">
-                                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="Mentor">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
-                                        <div class="absolute bottom-4 left-4">
-                                            <p class="text-white font-medium text-lg">Caner O.</p>
-                                            <p class="text-xs text-gray-400 font-serif italic">Creative Dir.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <h2 class="text-3xl md:text-4xl text-center mb-14 font-manrope font-medium">Neler <span class="font-manrope font-medium">Yapıyoruz?</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="p-6 rounded-xl transition-all duration-300 group" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="mb-5 transition-transform duration-300 group-hover:scale-110 text-white">
+                            <i data-lucide="presentation" class="w-7 h-7" style="stroke-width: 1.5;"></i>
                         </div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Eğitim Programları</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Seminerler, webinerler ve strateji eğitimleri.</p>
+                    </div>
+                    <div class="p-6 rounded-xl transition-all duration-300 group" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="mb-5 transition-transform duration-300 group-hover:scale-110 text-white">
+                            <i data-lucide="handshake" class="w-7 h-7" style="stroke-width: 1.5;"></i>
+                        </div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">İş Birliği</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Profesyonelleri bir araya getirerek fırsatlar yaratıyoruz.</p>
+                    </div>
+                    <div class="p-6 rounded-xl transition-all duration-300 group" style="background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="mb-5 transition-transform duration-300 group-hover:scale-110 text-white">
+                            <i data-lucide="megaphone" class="w-7 h-7" style="stroke-width: 1.5;"></i>
+                        </div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Farkındalık</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Sosyal medya kampanyaları ve etkinlikler.</p>
+                    </div>
+                    <div class="p-6 rounded-xl transition-all duration-300 group" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="mb-5 transition-transform duration-300 group-hover:scale-110 text-white">
+                            <i data-lucide="lightbulb" class="w-7 h-7" style="stroke-width: 1.5;"></i>
+                        </div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Mentörlük</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Başarılı iş insanları ile girişimcileri buluşturuyoruz.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projeler" class="py-16 md:py-24 relative overflow-hidden bg-white/[0.01]">
+        <section class="md:py-28 overflow-hidden pt-20 pb-20 relative" style="background: rgba(255,255,255,0.01)" id="projeler">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <h2 class="text-3xl font-light text-center mb-12 md:mb-16">Gelecek <span class="font-serif italic">Projeler</span></h2>
-                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-white group-hover:w-1.5 transition-all"></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Markalaşma Hackathon</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Fikirlerinizi gerçekleştirmeye hazır mısınız? Yaratıcı çözümler.</p>
+                <h2 class="md:text-4xl text-3xl font-medium font-manrope text-center mb-14">Gelecek <span class="font-medium font-manrope">Projeler</span></h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="p-6 rounded-xl relative overflow-hidden group transition-all duration-300" style="background: rgba(20,20,20,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);">
+                        <div class="absolute top-0 left-0 w-1 h-full transition-all duration-300 group-hover:w-1.5 bg-white"></div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Markalaşma Hackathon</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Fikirlerinizi gerçekleştirmeye hazır mısınız? Yaratıcı çözümler.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-white group-hover:w-1.5 transition-all"></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Girişimlere Destek</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Yerel ve global pazar için stratejik rehberlik sunuyoruz.</p>
+                    <div class="p-6 rounded-xl relative overflow-hidden group transition-all duration-300" style="background: rgba(20,20,20,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);">
+                        <div class="absolute top-0 left-0 w-1 h-full transition-all duration-300 group-hover:w-1.5 bg-white"></div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Girişimlere Destek</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Yerel ve global pazar için stratejik rehberlik sunuyoruz.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-white group-hover:w-1.5 transition-all"></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Kişisel Markalaşma</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Güçlü bir dijital varlık oluşturmanız için rehberlik ediyoruz.</p>
+                    <div class="p-6 rounded-xl relative overflow-hidden group transition-all duration-300" style="background: rgba(20,20,20,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);">
+                        <div class="absolute top-0 left-0 w-1 h-full transition-all duration-300 group-hover:w-1.5 bg-white"></div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Kişisel Markalaşma</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Güçlü bir dijital varlık oluşturmanız için rehberlik ediyoruz.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-white group-hover:w-1.5 transition-all"></div>
-                        <h3 class="text-lg font-medium text-white mb-2">Yüz Yüze Buluşmalar</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Birebir iletişimle fırsatlarınızı artırın. Uzmanlarla tartışın.</p>
+                    <div class="p-6 rounded-xl relative overflow-hidden group transition-all duration-300" style="background: rgba(20,20,20,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);">
+                        <div class="absolute top-0 left-0 w-1 h-full transition-all duration-300 group-hover:w-1.5 bg-white"></div>
+                        <h3 class="text-lg mb-2 tracking-tight text-white font-manrope font-medium">Yüz Yüze Buluşmalar</h3>
+                        <p class="text-sm leading-relaxed text-gray-400 font-manrope font-medium">Birebir iletişimle fırsatlarınızı artırın. Uzmanlarla tartışın.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 relative overflow-hidden">
-            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <section class="py-24 md:py-32 relative overflow-hidden">
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none -z-10" style="background: rgba(99,102,241,0.06); filter: blur(120px);"></div>
 
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-                        <span class="text-[10px] font-medium tracking-[0.2em] uppercase text-gray-300 flex items-center gap-2">
-                            <i class="fa-solid fa-quote-left text-blue-400"></i> BAŞARI HİKAYELERİ
-                        </span>
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-6" style="border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);">
+                        <i data-lucide="quote" class="w-3.5 h-3.5 text-gray-400" style="stroke-width: 1.5;"></i>
+                        <span class="text-xs tracking-wide uppercase text-gray-300 font-manrope font-medium">Başarı Hikayeleri</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-light text-white mb-6">
-                        İlham Veren <span class="font-serif italic text-gray-400">Sonuçlar.</span>
+                    <h2 class="text-3xl md:text-4xl mb-6 text-white font-manrope font-medium">
+                        İlham Veren <span class="text-gray-400 font-manrope font-medium">Sonuçlar.</span>
                     </h2>
-                    <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto font-light leading-relaxed">
+                    <p class="text-sm md:text-base max-w-xl mx-auto leading-relaxed text-gray-400 font-manrope font-medium">
                         Topluluk üyelerimizin girişimlerini nasıl büyüttüğüne tanık olun.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full group-hover:bg-blue-500/20 transition"></div>
-                        <div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="p-7 rounded-2xl flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="absolute top-0 right-0 w-28 h-28 rounded-full pointer-events-none transition-all duration-500" style="background: rgba(99,102,241,0.08); filter: blur(40px);"></div>
+                        <div class="relative z-10">
                             <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
+                                <div class="w-10 h-10 rounded-full overflow-hidden" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08);">
                                     <img src="https://i.pravatar.cc/100?img=1" class="w-full h-full object-cover" alt="User">
                                 </div>
                                 <div>
-                                    <h4 class="text-white text-sm font-bold">Elif Yılmaz</h4>
-                                    <p class="text-xs text-gray-500">SaaS Kurucusu</p>
+                                    <h4 class="text-sm text-white font-manrope font-medium">Elif Yılmaz</h4>
+                                    <p class="text-xs text-gray-500 font-manrope font-medium">SaaS Kurucusu</p>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">CloudFlow Büyümesi</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
+                            <h3 class="text-xl mb-3 text-white font-manrope font-medium">CloudFlow Büyümesi</h3>
+                            <p class="text-sm leading-relaxed mb-6 text-gray-400 font-manrope font-medium">
                                 "Marka İnisiyatifi sayesinde operasyonel maliyetleri %50 düşürdük ve ekibimizi global pazara hazırladık."
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-blue-400">+60% ROI</span>
-                            <i class="fa-solid fa-arrow-trend-up text-gray-600"></i>
+                        <div class="pt-4 flex justify-between items-center relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-purple-400 font-manrope font-medium">+60% ROI</span>
+                            <i data-lucide="trending-up" class="w-4 h-4 text-gray-500" style="stroke-width: 1.5;"></i>
                         </div>
                     </div>
 
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 blur-[40px] rounded-full group-hover:bg-purple-500/20 transition"></div>
-                        <div>
+                    <div class="p-7 rounded-2xl flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="absolute top-0 right-0 w-28 h-28 rounded-full pointer-events-none transition-all duration-500" style="background: rgba(168,85,247,0.08); filter: blur(40px);"></div>
+                        <div class="relative z-10">
                             <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
+                                <div class="w-10 h-10 rounded-full overflow-hidden" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08);">
                                     <img src="https://i.pravatar.cc/100?img=3" class="w-full h-full object-cover" alt="User">
                                 </div>
                                 <div>
-                                    <h4 class="text-white text-sm font-bold">Mert Demir</h4>
-                                    <p class="text-xs text-gray-500">E-Ticaret Uzmanı</p>
+                                    <h4 class="text-sm text-white font-manrope font-medium">Mert Demir</h4>
+                                    <p class="text-xs text-gray-500 font-manrope font-medium">E-Ticaret Uzmanı</p>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">Satış Rekoru</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
+                            <h3 class="text-xl mb-3 text-white font-manrope font-medium">Satış Rekoru</h3>
+                            <p class="text-sm leading-relaxed mb-6 text-gray-400 font-manrope font-medium">
                                 "Mentörlük seansları sonrası reklam stratejimiz tamamen değişti ve 3 ayda ciromuzu ikiye katladık."
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-purple-400">2x Ciro</span>
-                            <i class="fa-solid fa-chart-line text-gray-600"></i>
+                        <div class="pt-4 flex justify-between items-center relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-pink-400 font-manrope font-medium">2x Ciro</span>
+                            <i data-lucide="bar-chart-3" class="w-4 h-4 text-gray-500" style="stroke-width: 1.5;"></i>
                         </div>
                     </div>
 
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                         <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/10 blur-[40px] rounded-full group-hover:bg-green-500/20 transition"></div>
-                        <div>
+                    <div class="p-7 rounded-2xl flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.background='rgba(255,255,255,0.04)';" onmouseout="this.style.background='rgba(20,20,20,0.5)';">
+                        <div class="absolute top-0 right-0 w-28 h-28 rounded-full pointer-events-none transition-all duration-500" style="background: rgba(34,197,94,0.08); filter: blur(40px);"></div>
+                        <div class="relative z-10">
                             <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
+                                <div class="w-10 h-10 rounded-full overflow-hidden" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08);">
                                     <img src="https://i.pravatar.cc/100?img=5" class="w-full h-full object-cover" alt="User">
                                 </div>
                                 <div>
-                                    <h4 class="text-white text-sm font-bold">Zeynep K.</h4>
-                                    <p class="text-xs text-gray-500">Freelance Tasarımcı</p>
+                                    <h4 class="text-sm text-white font-manrope font-medium">Zeynep K.</h4>
+                                    <p class="text-xs text-gray-500 font-manrope font-medium">Freelance Tasarımcı</p>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">Kişisel Marka</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
+                            <h3 class="text-xl mb-3 text-white font-manrope font-medium">Kişisel Marka</h3>
+                            <p class="text-sm leading-relaxed mb-6 text-gray-400 font-manrope font-medium">
                                 "Buradaki eğitimlerle kendi kişisel markamı oluşturdum. Artık müşteri aramak yerine müşteriler beni buluyor."
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-green-400">Tam Doluluk</span>
-                            <i class="fa-solid fa-check text-gray-600"></i>
+                        <div class="pt-4 flex justify-between items-center relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-blue-400 font-manrope font-medium">Tam Doluluk</span>
+                            <i data-lucide="check-circle" class="w-4 h-4 text-gray-500" style="stroke-width: 1.5;"></i>
                         </div>
                     </div>
-
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                        <div>
-                            <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
-                                    <img src="https://i.pravatar.cc/100?img=8" class="w-full h-full object-cover" alt="User">
-                                </div>
-                                <div>
-                                    <h4 class="text-white text-sm font-bold">Caner Ozan</h4>
-                                    <p class="text-xs text-gray-500">Ajans Kurucusu</p>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">Network Gücü</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
-                                "Platform içindeki iş birlikleri sayesinde ajansımızın hizmet ağını genişlettik ve 5 yeni büyük müşteri kazandık."
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-yellow-400">5 Yeni Partner</span>
-                            <i class="fa-solid fa-handshake text-gray-600"></i>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                        <div>
-                            <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
-                                    <img src="https://i.pravatar.cc/100?img=9" class="w-full h-full object-cover" alt="User">
-                                </div>
-                                <div>
-                                    <h4 class="text-white text-sm font-bold">Selin Ay</h4>
-                                    <p class="text-xs text-gray-500">Pazarlama Müdürü</p>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">Stratejik Dönüşüm</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
-                                "Geleneksel pazarlamadan dijitale geçiş sürecimizde buradaki eğitimler pusulamız oldu."
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-pink-400">%85 Dönüşüm</span>
-                            <i class="fa-solid fa-arrows-rotate text-gray-600"></i>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 group hover:bg-white/5 transition duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                        <div>
-                            <div class="mb-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-gray-800 border border-white/10 overflow-hidden">
-                                    <img src="https://i.pravatar.cc/100?img=11" class="w-full h-full object-cover" alt="User">
-                                </div>
-                                <div>
-                                    <h4 class="text-white text-sm font-bold">Burak S.</h4>
-                                    <p class="text-xs text-gray-500">FinTech Girişimcisi</p>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-serif italic text-white mb-3">Yatırım Turu</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-6">
-                                "Girişimim için aradığım mentör desteğini burada buldum ve tohum öncesi yatırım turunu başarıyla kapattım."
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-white/5 flex justify-between items-center">
-                            <span class="text-xs font-bold text-cyan-400">Yatırım</span>
-                            <i class="fa-solid fa-rocket text-gray-600"></i>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="py-16 md:py-20 border-y border-white/5 bg-deep">
+        <section class="py-20 md:py-24" style="border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); background: #020202;">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%90</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Farkındalık</p></div>
-                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%82</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Yeni İş Fırsatı</p></div>
-                <div class="mb-4 md:mb-0"><h3 class="text-3xl font-serif italic text-white mb-1">%76</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Kariyer Adımı</p></div>
-                <div><h3 class="text-3xl font-serif italic text-white mb-1">200+</h3><p class="text-[10px] uppercase tracking-widest text-gray-500">Aktif Üye</p></div>
-            </div>
-        </section>
-
-        <section id="sss" class="py-16 md:py-24 max-w-2xl mx-auto px-6">
-            <h2 class="text-2xl font-light text-center text-white mb-12">Merak <span class="font-serif italic">Edilenler</span></h2>
-            <div class="space-y-2">
-                <div class="border-b border-white/10">
-                    <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Nasıl Üye Olunur?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
-                    </button>
-                    <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Üyelik için web sitemizdeki başvuru formunu doldurmanız yeterlidir.</div>
-                </div>
-                <div class="border-b border-white/10">
-                    <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Kimler Üye Olabilir?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
-                    </button>
-                    <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Markalaşmaya ilgi duyan herkes.</div>
-                </div>
-                <div class="border-b border-white/10">
-                    <button class="w-full flex justify-between items-center text-left py-4 group hover:bg-white/5 px-2 transition rounded" onclick="toggleAccordion(this)">
-                        <span class="text-sm font-medium text-gray-300 group-hover:text-white pr-4">Üyelik Ücretli Mi?</span>
-                        <span class="text-xs text-gray-500 font-mono transition transform group-hover:text-white shrink-0">+</span>
-                    </button>
-                    <div class="accordion-content text-sm text-gray-500 font-light leading-relaxed px-2 pb-4">Temel üyelik ücretsizdir.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="iletisim" class="py-16 md:py-24 px-6 bg-white/[0.02] relative">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                 <div>
-                    <div class="inline-block px-3 py-1 mb-6 border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-gray-400">İletişim</div>
-                    <h2 class="text-3xl md:text-4xl font-light text-white mb-6">Bizimle <br> <span class="font-serif italic text-gray-400">Bağlantı Kurun.</span></h2>
-                    <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">Soruların, işbirliği önerilerin veya sadece merhaba demek için buradayız.</p>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-white font-manrope font-medium">%90</h3>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-manrope font-medium">Farkındalık</p>
+                </div>
+                <div class="">
+                    <h3 class="text-3xl md:text-4xl mb-2 text-white font-manrope font-medium">%82</h3>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-manrope font-medium">Yeni İş Fırsatı</p>
+                </div>
+                <div class="">
+                    <h3 class="text-3xl md:text-4xl mb-2 text-white font-manrope font-medium">%76</h3>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-manrope font-medium">Kariyer Adımı</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-white font-manrope font-medium">200+</h3>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-manrope font-medium">Aktif Üye</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="md:py-28 max-w-2xl mr-auto ml-auto pt-20 pr-6 pb-20 pl-6" id="sss">
+            <h2 class="text-2xl md:text-3xl text-center mb-12 text-white font-manrope tracking-tight font-medium">Merak <span class="font-medium tracking-tight font-manrope">Edilenler</span></h2>
+            <div class="space-y-1">
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.08);" class="">
+                    <button class="flex group transition-colors text-4xl text-left w-full rounded px-2 py-5 items-center justify-between" onclick="toggleAccordion(this)">
+                        <span class="text-sm group-hover:text-white pr-4 transition-colors text-gray-300 font-manrope font-medium">Nasıl Üye Olunur?</span>
+                        <span class="text-gray-500 transition-transform duration-300 shrink-0 accordion-icon">
+                            <i data-lucide="plus" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content text-sm text-gray-500 leading-relaxed px-2 pb-5 font-manrope font-medium" style="max-height: 0px; opacity: 0; overflow: hidden;">
+                        Üyelik için web sitemizdeki başvuru formunu doldurmanız yeterlidir. Başvurunuz incelendikten sonra sizinle iletişime geçeceğiz.
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.08);" class="">
+                    <button class="w-full flex justify-between items-center text-left py-5 group px-2 transition-colors rounded" onclick="toggleAccordion(this)">
+                        <span class="text-sm group-hover:text-white pr-4 transition-colors text-gray-300 font-manrope font-medium">Kimler Üye Olabilir?</span>
+                        <span class="text-gray-500 transition-transform duration-300 shrink-0 accordion-icon">
+                            <i data-lucide="plus" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content text-sm text-gray-500 leading-relaxed px-2 pb-5 font-manrope font-medium" style="max-height: 0px; opacity: 0; overflow: hidden;">
+                        Markalaşmaya ilgi duyan herkes üye olabilir. Öğrenciler, girişimciler, profesyoneller ve sektör uzmanları topluluğumuza katılabilir.
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.08);" class="">
+                    <button class="w-full flex justify-between items-center text-left py-5 group px-2 transition-colors rounded" onclick="toggleAccordion(this)">
+                        <span class="text-sm group-hover:text-white pr-4 transition-colors text-gray-300 font-manrope font-medium">Üyelik Ücretli Mi?</span>
+                        <span class="text-gray-500 transition-transform duration-300 shrink-0 accordion-icon">
+                            <i data-lucide="plus" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content text-sm text-gray-500 leading-relaxed px-2 pb-5 font-manrope font-medium" style="max-height: 0px; opacity: 0; overflow: hidden;">
+                        Temel üyelik tamamen ücretsizdir. Premium içeriklere ve özel etkinliklere erişim için opsiyonel paketlerimiz mevcuttur.
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                    <button class="w-full flex justify-between items-center text-left py-5 group px-2 transition-colors rounded" onclick="toggleAccordion(this)">
+                        <span class="text-sm group-hover:text-white pr-4 transition-colors text-gray-300 font-manrope font-medium">Etkinlikler Nasıl Duyuruluyor?</span>
+                        <span class="text-gray-500 transition-transform duration-300 shrink-0 accordion-icon">
+                            <i data-lucide="plus" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content text-sm text-gray-500 leading-relaxed px-2 pb-5 font-manrope font-medium" style="max-height: 0px; opacity: 0; overflow: hidden;">
+                        Tüm etkinlikler e-posta bülteni, sosyal medya kanallarımız ve üye paneli üzerinden duyurulmaktadır.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim" class="py-20 md:py-28 px-6 relative" style="background: rgba(255,255,255,0.01);">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="">
+                    <div class="inline-block px-3 py-1.5 mb-6 rounded-full text-xs uppercase tracking-widest text-gray-400 font-manrope font-medium" style="border: 1px solid rgba(255, 255, 255, 0.08);">İletişim</div>
+                    <h2 class="text-3xl md:text-4xl mb-6 text-white font-manrope font-medium">Bizimle <br> <span class="text-gray-400 font-manrope font-medium">Bağlantı Kurun.</span></h2>
+                    <p class="text-sm mb-10 leading-relaxed max-w-sm text-gray-400 font-manrope font-medium">Soruların, işbirliği önerilerin veya sadece merhaba demek için buradayız.</p>
                     <div class="grid gap-4">
-                         <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-white/30 transition">
-                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white shrink-0"><i class="fa-regular fa-envelope"></i></div>
+                         <div class="p-4 rounded-xl flex items-center gap-4 transition-all duration-300" style="background: rgba(20, 20, 20, 0.5); border: 1px solid rgba(255, 255, 255, 0.06);" onmouseover="this.style.borderColor='rgba(255,255,255,0.15)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white" style="background: rgba(255,255,255,0.05);">
+                                <i data-lucide="mail" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                            </div>
                             <div class="overflow-hidden">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-white">E-posta Adresimiz</h4>
-                                <p class="text-xs text-gray-400 truncate">info@markainsiyatifi.com</p>
+                                <h4 class="text-xs uppercase tracking-wider text-white font-manrope font-medium">E-posta Adresimiz</h4>
+                                <p class="text-xs truncate text-gray-400 font-manrope font-medium">info@markainisiyatifi.com</p>
                             </div>
                          </div>
                     </div>
                 </div>
-                <div class="glass-card p-6 md:p-8 rounded-2xl relative overflow-hidden">
-                    <form id="contact-form" class="space-y-5 md:space-y-6 relative z-10">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="p-7 md:p-10 rounded-2xl relative overflow-hidden" style="background: rgba(20,20,20,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);">
+                    <form id="contact-form" class="space-y-5 relative z-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">İsim</label>
-                                <input type="text" name="name" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3">
+                                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-manrope font-medium">İsim</label>
+                                <input type="text" name="name" required="" class="w-full px-4 py-3 rounded-lg placeholder-gray-600 transition-all duration-200 focus:outline-none text-white" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 16px;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)';">
                             </div>
                             <div>
-                                <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Soyad</label>
-                                <input type="text" name="surname" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3">
+                                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-manrope font-medium">Soyad</label>
+                                <input type="text" name="surname" required="" class="w-full px-4 py-3 rounded-lg placeholder-gray-600 transition-all duration-200 focus:outline-none text-white" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 16px;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)';">
                             </div>
                         </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">E-Posta</label>
-                            <input type="email" name="email" required class="w-full minimal-input placeholder-gray-700 text-sm py-3 px-3" placeholder="email@ornek.com">
+                        <div class="">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-manrope font-medium">E-Posta</label>
+                            <input type="email" name="email" required="" class="w-full px-4 py-3 rounded-lg placeholder-gray-600 transition-all duration-200 focus:outline-none text-white" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 16px;" placeholder="email@ornek.com" onfocus="this.style.borderColor='rgba(255,255,255,0.3)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)';">
                         </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Mesaj</label>
-                            <textarea name="message" rows="4" required class="w-full minimal-input placeholder-gray-700 text-sm resize-none py-3 px-3"></textarea>
+                        <div class="">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-manrope font-medium">Mesaj</label>
+                            <textarea name="message" rows="4" required="" class="w-full px-4 py-3 rounded-lg placeholder-gray-600 resize-none transition-all duration-200 focus:outline-none text-white" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 16px;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)';"></textarea>
                         </div>
-                        <button type="submit" id="contact-submit" class="w-full bg-white text-black font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-gray-200 transition active:scale-95 duration-100">Gönder</button>
+                        <button type="submit" id="contact-submit" class="w-full py-3.5 rounded-lg text-sm uppercase tracking-wider transition-all duration-200 active:scale-[0.98] bg-white text-black hover:bg-gray-100 font-manrope font-medium">Gönder</button>
                     </form>
                 </div>
             </div>
@@ -646,47 +453,74 @@
 
     </main>
 
-    <footer class="pt-16 md:pt-24 pb-12 px-6 relative overflow-hidden">
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-t from-blue-900/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
-        <div class="max-w-7xl mx-auto">
-            <div class="glass-card rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-16 border border-white/10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
-                
-                <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
-                    <div class="lg:col-span-5">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/5 mb-6">
-                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                            <span class="text-[10px] uppercase tracking-widest text-gray-300">Güncellemeler</span>
-                        </div>
-                        <h3 class="text-2xl md:text-4xl font-serif italic text-white mb-6">Markaların dünyasına erişin!</h3>
-                        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" name="email" required placeholder="E-posta adresiniz" class="w-full minimal-input px-4 py-3.5 md:py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white/40 transition">
-                            <button type="submit" class="w-full sm:w-auto bg-white text-black px-6 py-3.5 md:py-3 rounded-lg text-sm font-bold hover:bg-gray-200 transition active:scale-95">Katıl</button>
-                        </form>
-                    </div>
-                    <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-                        <div><h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">Platform</h4><ul class="space-y-4 text-sm font-light text-gray-300"><li><a href="#neden-biz">Neden Biz?</a></li><li><a href="#mentors">Mentörler</a></li></ul></div>
-                        <div><h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">Kaynaklar</h4><ul class="space-y-4 text-sm font-light text-gray-300"><li><a href="#sss">Merak Edilenler</a></li><li><a href="#projeler">Projeler</a></li></ul></div>
-                        <div><h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">İletişim</h4><ul class="space-y-4 text-sm font-light text-gray-300"><li><a href="#iletisim">İşbirliği</a></li></ul></div>
-                    </div>
-                </div>
+    <!-- New Minimal Footer -->
+    <footer class="relative pt-16 pb-12 px-4 md:px-6" style="background: #020202; border-top: 1px solid rgba(255,255,255,0.05);">
+        <!-- Soft radial glow -->
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] h-[50%] rounded-full" style="background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 70%); filter: blur(60px);"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Eyebrow -->
+            <div class="flex items-center justify-center gap-4 text-gray-500 text-sm">
+                <span class="h-px w-12" style="background: rgba(255,255,255,0.1);"></span>
+                <span class="italic font-manrope font-normal text-xs">Her zaman ulaşabilirsiniz</span>
+                <span class="h-px w-12" style="background: rgba(255,255,255,0.1);"></span>
             </div>
-            
-            <div class="mt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6">
-                <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xs text-gray-500 font-mono text-center md:text-left">
-                    <span>&copy; 2025 Marka İnisiyatifi</span><span class="hidden md:inline">|</span><a href="#">Gizlilik</a><a href="#">Şartlar</a>
-                </div>
-                <div class="flex gap-3">
-                    <a href="https://www.instagram.com/markainisiyatifi/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com/markainisiyatif?s=11" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition"><i class="fa-brands fa-linkedin"></i></a>
+
+            <!-- Heading -->
+            <h2 class="mt-6 text-3xl sm:text-4xl md:text-5xl text-white text-center font-manrope font-medium tracking-tight">
+                Bağlantıda <span class="text-gray-400 font-manrope font-medium">Kalalım</span>
+            </h2>
+
+            <!-- Copy -->
+            <p class="mt-4 text-sm text-gray-400 max-w-md mx-auto text-center font-manrope font-normal leading-relaxed">
+                Sorularınız veya iş birliği önerileriniz için bize ulaşın. Yeni projeler veya sadece sohbet için buradayız!
+            </p>
+
+            <!-- CTA -->
+            <div class="mt-8 flex justify-center">
+                <a href="#iletisim" class="inline-flex items-center gap-2 h-12 px-6 rounded-full transition-all duration-300 text-white text-sm font-manrope font-medium tracking-tight" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
+                    <i data-lucide="arrow-up-right" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                    İletişime Geç
+                </a>
+            </div>
+
+            <!-- Socials -->
+            <div class="mt-10 flex items-center justify-center gap-6 text-gray-500">
+                <a href="https://x.com/markainisiyatif?s=11" target="_blank" aria-label="X (Twitter)" class="p-2 rounded-full transition-all duration-200 hover:text-white" style="background: transparent;" onmouseover="this.style.background='rgba(255,255,255,0.05)';" onmouseout="this.style.background='transparent';">
+                    <i data-lucide="twitter" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                </a>
+                <span class="h-6 w-px" style="background: rgba(255,255,255,0.1);"></span>
+                <a href="https://www.instagram.com/markainisiyatifi/" target="_blank" aria-label="Instagram" class="p-2 rounded-full transition-all duration-200 hover:text-white" style="background: transparent;" onmouseover="this.style.background='rgba(255,255,255,0.05)';" onmouseout="this.style.background='transparent';">
+                    <i data-lucide="instagram" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                </a>
+                <span class="h-6 w-px" style="background: rgba(255,255,255,0.1);"></span>
+                <a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank" aria-label="LinkedIn" class="p-2 rounded-full transition-all duration-200 hover:text-white" style="background: transparent;" onmouseover="this.style.background='rgba(255,255,255,0.05)';" onmouseout="this.style.background='transparent';">
+                    <i data-lucide="linkedin" class="w-5 h-5" style="stroke-width: 1.5;"></i>
+                </a>
+            </div>
+
+            <!-- Email -->
+            <p class="mt-6 text-center">
+                <a href="mailto:info@markainisiyatifi.com" class="text-sm text-gray-400 underline underline-offset-4 hover:text-white transition-colors font-manrope font-normal">info@markainisiyatifi.com</a>
+            </p>
+
+            <!-- Bottom bar -->
+            <div class="mt-12 h-px" style="background: rgba(255,255,255,0.05);"></div>
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+                <p class="font-manrope font-normal">© <span id="year">2025</span> Marka İnisiyatifi</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-gray-400 transition-colors font-manrope font-normal">Gizlilik</a>
+                    <a href="#" class="hover:text-gray-400 transition-colors font-manrope font-normal">Kullanım Şartları</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // 1. LÜTFEN KENDİ FORMSPREE ENDPOINT'İNİZİ BURAYA YAZIN
+        lucide.createIcons();
+
         const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; 
 
         async function handleFormSubmit(event) {
@@ -708,14 +542,14 @@
 
                 if (response.ok) {
                     button.innerText = "Teşekkürler!";
-                    button.classList.remove('bg-white', 'text-black');
-                    button.classList.add('bg-green-500', 'text-white');
+                    button.style.background = '#22c55e';
+                    button.style.color = '#fff';
                     form.reset();
                     setTimeout(() => {
                         button.disabled = false;
                         button.innerText = originalBtnText;
-                        button.classList.add('bg-white', 'text-black');
-                        button.classList.remove('bg-green-500', 'text-white');
+                        button.style.background = '#fff';
+                        button.style.color = '#000';
                     }, 3000);
                 } else {
                     alert("Bir hata oluştu.");
@@ -739,11 +573,11 @@
             if(heroForm) { heroForm.action = FORM_ENDPOINT; heroForm.method = "POST"; heroForm.addEventListener('submit', handleFormSubmit); }
         }
 
-        // Mobil Menü
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
-        const menuIcon = document.getElementById('menu-icon');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
 
         if(mobileBtn && mobileMenu){
             mobileBtn.addEventListener('click', () => {
@@ -751,15 +585,13 @@
                 if(isHidden) {
                     mobileMenu.classList.remove('translate-x-full');
                     document.body.style.overflow = 'hidden'; 
-                    // İkon değiştir (X yap)
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
                 } else {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = 'auto';
-                    // İkon değiştir (Hamburger yap)
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
                 }
             });
 
@@ -767,31 +599,43 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = 'auto';
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
                 });
             });
         }
 
-        // Akordiyon
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
-            const icon = button.querySelector('span:last-child');
+            const iconContainer = button.querySelector('.accordion-icon');
+            const icon = iconContainer.querySelector('[data-lucide]');
+            
+            const allItems = document.querySelectorAll('#sss .accordion-content');
+            const allIcons = document.querySelectorAll('#sss .accordion-icon [data-lucide]');
+            
+            allItems.forEach((item, index) => {
+                if (item !== content && item.style.maxHeight) {
+                    item.style.maxHeight = null;
+                    item.style.opacity = '0';
+                    allIcons[index].setAttribute('data-lucide', 'plus');
+                }
+            });
             
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
-                content.classList.remove('active');
-                icon.innerText = "+";
+                content.style.opacity = '0';
+                icon.setAttribute('data-lucide', 'plus');
             } else {
-                // Diğer açık olanları kapat (Opsiyonel ama daha temiz UX)
-                const allContents = document.querySelectorAll('.accordion-content');
-                const allIcons = document.querySelectorAll('.accordion-content + span'); // Bu seçim yapısı HTML'e göre değişebilir
-                
-                content.style.maxHeight = (content.scrollHeight + 20) + "px";
-                content.classList.add('active');
-                icon.innerText = "-";
+                content.style.maxHeight = content.scrollHeight + 20 + "px";
+                content.style.opacity = '1';
+                icon.setAttribute('data-lucide', 'minus');
             }
+            
+            lucide.createIcons();
         }
+
+        // Update year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-</body>
-</html>
+
+</body></html>

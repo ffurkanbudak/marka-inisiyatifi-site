@@ -1320,7 +1320,11 @@
     nav { padding: 0 16px; height: 64px; }
     .nav-links { display: none !important; }
     .nav-right .btn-ghost { display: none; }
+    .nav-right .powered-by-mobile { display: none; }
     .hamburger { display: flex; }
+
+    /* Hide powered-by in header on mobile */
+    .nav-right > span[style] { display: none !important; }
 
     /* Logo smaller on mobile */
     .logo-img { width: 30px; height: 30px; }

@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/brand-initiative",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brand-initiative/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brand-initiative/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

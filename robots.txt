@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://markainisiyatifi.com/sitemap.xml

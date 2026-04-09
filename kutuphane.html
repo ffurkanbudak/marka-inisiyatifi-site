@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Mİ Kütüphanesi | Marka İnisiyatifi</title>
+<meta name="description" content="Stratejik marka bilgisinin merkezi. Vaka analizleri, akademik literatür, derinlemesine makaleler ve özel podcast serileri.">
+<link rel="canonical" href="https://markainisiyatifi.com/kutuphane.html">
+<meta property="og:title" content="Mİ Kütüphanesi | Marka İnisiyatifi">
+<meta property="og:description" content="Stratejik marka bilgisinin merkezi.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markainisiyatifi.com/kutuphane.html">
+<meta property="og:image" content="https://markainisiyatifi.com/mis.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="keywords" content="marka kütüphanesi, marka stratejisi kaynaklar, markalaşma rehberi, marka bilgi bankası">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mİ Kütüphanesi | Marka İnisiyatifi">
+<meta name="twitter:description" content="Stratejik marka bilgisinin merkezi. Vaka analizleri, akademik literatür, derinlemesine makaleler ve özel podcast serileri.">
+<meta name="twitter:image" content="https://markainisiyatifi.com/mis.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --font-primary: 'Manrope', Arial, sans-serif;
+    --bg: #121212;
+    --bg-light: #f5f5f0;
+    --white: #ffffff;
+    --brand: #e12401;
+    --light-faded: rgba(255,255,255,0.12);
+    --dark-grey-1: #1a1a1a;
+    --dark-grey-2: #202020;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dark: #121212;
+    --text-dark-muted: rgba(18,18,18,0.45);
+    --border-light: rgba(18,18,18,0.08);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ══════════ NAVBAR ══════════ */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; border-bottom: 1px solid var(--light-faded); position: sticky; top: 0; z-index: 100; background: rgba(18,18,18,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+  .logo-img { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: #000; object-fit: cover; }
+  .logo-text { font-weight: 700; font-size: 14px; color: var(--white); letter-spacing: -0.01em; }
+  .logo-text .dot { color: var(--brand); }
+  .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+  .dropdown-group { position: relative; }
+  .dropdown-btn { display: flex; align-items: center; gap: 4px; color: var(--text-muted); font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: none; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: color 0.2s, background 0.2s; }
+  .dropdown-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .dropdown-btn svg { width: 13px; height: 13px; }
+  .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); min-width: 200px; background: rgba(14,14,18,0.97); border: 1px solid var(--light-faded); border-radius: 12px; padding: 6px; padding-top: 16px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; backdrop-filter: blur(20px); z-index: 100; }
+  .dropdown-group:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown-menu a { display: block; padding: 9px 14px; font-size: 13px; color: rgba(255,255,255,0.5); border-radius: 8px; transition: background 0.15s, color 0.15s; text-decoration: none; white-space: nowrap; font-weight: 500; }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+  .nav-links > li > a { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s, background 0.2s; padding: 8px 14px; border-radius: 8px; }
+  .nav-links > li > a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .powered-header { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+  .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .powered-header a:hover { color: var(--white); }
+  .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .btn-demo { display: inline-flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; background: transparent; padding: 4px 18px 4px 4px; border-radius: 100vw; border: 1px solid var(--light-faded); transition: all 0.3s; }
+  .btn-demo:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-demo .arrow-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .btn-demo .arrow-circle svg { width: 12px; height: 12px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; width: 42px; height: 42px; background: rgba(255,255,255,0.05); border: 1px solid var(--light-faded); border-radius: 10px; cursor: pointer; gap: 5px; z-index: 1001; }
+  .hamburger span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+  .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .mobile-menu { position: fixed; inset: 0; z-index: 999; background: rgba(12,12,14,0.98); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a { font-size: 1.35rem; font-weight: 600; color: rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--brand); }
+  .mobile-menu .mob-cta { margin-top: 20px; background: var(--brand); color: var(--white); padding: 14px 36px; border-radius: 100vw; font-size: 14px; font-weight: 700; }
+
+  /* ══════════ HERO (Amini Style) ══════════ */
+  .lib-hero {
+    padding: clamp(80px, 10vw, 140px) 48px clamp(48px, 6vw, 80px);
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .lib-hero .tag { font-size: 13px; font-weight: 700; color: var(--brand); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+  .lib-hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end; }
+  .lib-hero h1 { font-weight: 700; font-size: clamp(36px, 5vw, 64px); line-height: 1.25; letter-spacing: -0.01em; }
+  .lib-hero-desc { font-size: 15px; font-weight: 400; color: var(--text-muted); line-height: 1.7; max-width: 380px; }
+
+  /* ══════════ CUSTOMER STORIES (Horizontal Scroll) ══════════ */
+  .stories-section {
+    padding: clamp(64px, 8vw, 100px) 0 clamp(64px, 8vw, 100px) 48px;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .stories-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-right: 48px;
+  }
+  .stories-header h2 {
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: -0.02em;
+  }
+  .stories-arrows {
+    display: flex;
+    gap: 12px;
+  }
+  .stories-arrows button {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--light-faded); background: transparent;
+    color: var(--white); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .stories-arrows button:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .stories-arrows button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .stories-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-right: 48px;
+    padding-bottom: 4px;
+  }
+  .stories-track::-webkit-scrollbar { display: none; }
+
+  .story-card {
+    flex-shrink: 0;
+    width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--dark-grey-1);
+    border: 1px solid var(--light-faded);
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .story-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+  .story-card .story-img {
+    width: 100%;
+    height: 240px;
+    background: var(--dark-grey-2);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .story-card .story-img .story-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(18,18,18,0.95) 100%);
+  }
+  .story-card .story-img .story-pattern {
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+    background-image: radial-gradient(circle, var(--white) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .story-card .story-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .story-card h3 { font-weight: 700; font-size: 16px; line-height: 1.35; margin-bottom: 10px; }
+  .story-card .story-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.55; margin-bottom: 20px; flex: 1; }
+  .story-card .read-link { font-size: 13px; font-weight: 600; color: var(--white); display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .story-card .read-link:hover { color: var(--brand); }
+  .story-card .read-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ══════════ ARTICLES SECTION (White bg, tabs, filters) ══════════ */
+  .articles-section {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: clamp(64px, 8vw, 100px) 48px;
+  }
+
+  .articles-tabs {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(18,18,18,0.08);
+  }
+  .articles-tabs button {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 36px);
+    letter-spacing: -0.02em;
+    background: none;
+    border: none;
+    padding: 0 0 12px;
+    cursor: pointer;
+    color: rgba(18,18,18,0.2);
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s;
+  }
+  .articles-tabs button.active {
+    color: var(--text-dark);
+    border-bottom-color: var(--text-dark);
+  }
+  .articles-tabs button:hover { color: var(--text-dark); }
+
+  .articles-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .filter-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-pills button {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 100vw;
+    border: 1px solid rgba(18,18,18,0.1);
+    background: transparent;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-pills button.active {
+    background: var(--brand);
+    color: var(--white);
+    border-color: var(--brand);
+  }
+  .filter-pills button:hover:not(.active) { background: rgba(18,18,18,0.04); }
+
+  .sort-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark-muted);
+  }
+  .sort-control svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .sort-control select {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    border: 1px solid rgba(18,18,18,0.1);
+    border-radius: 8px;
+    padding: 6px 12px;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .article-card {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: block;
+    transition: transform 0.2s;
+  }
+  .article-card:hover { transform: translateY(-3px); }
+
+  .article-card .article-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 14px;
+    background: #f0ede8;
+    margin-bottom: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .article-card .article-img .art-pattern {
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    background-image: radial-gradient(circle, var(--text-dark) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dark-muted);
+  }
+
+  .article-card h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+
+  .article-card .article-excerpt {
+    font-size: 13px;
+    color: var(--text-dark-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .article-card .read-article {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .article-card .read-article svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Pagination */
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-numbers {
+    display: flex;
+    gap: 4px;
+  }
+  .page-numbers span {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: var(--text-dark-muted);
+  }
+  .page-numbers span.active {
+    border: 1px solid rgba(18,18,18,0.15);
+    color: var(--text-dark);
+  }
+  .page-numbers span:hover:not(.active) { background: rgba(18,18,18,0.04); }
+  .page-numbers .ellipsis { cursor: default; }
+
+  .btn-next {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-primary); font-size: 13px; font-weight: 700;
+    background: var(--text-dark); color: var(--white);
+    border: none; border-radius: 100vw; padding: 12px 24px;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .btn-next:hover { opacity: 0.85; }
+  .btn-next svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ══════════ FAQ SECTION (Dark) ══════════ */
+  .faq-section {
+    background: var(--bg);
+    padding: clamp(64px, 8vw, 100px) 48px;
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+  }
+  .faq-left .faq-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .faq-left .faq-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 380px;
+  }
+  .faq-contact-card {
+    background: var(--dark-grey-1);
+    border: 1px solid var(--light-faded);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .faq-contact-card h4 { font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+  .faq-contact-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+  .faq-contact-card a {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--white);
+    text-decoration: none; border: 1px solid var(--light-faded);
+    padding: 10px 20px; border-radius: 100vw; transition: all 0.2s;
+  }
+  .faq-contact-card a:hover { border-color: var(--white); }
+  .faq-contact-card a svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .faq-right .faq-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .faq-right .faq-tabs button {
+    font-family: var(--font-primary); font-weight: 700;
+    font-size: clamp(18px, 2vw, 24px); background: none;
+    border: none; padding: 0 0 12px; cursor: pointer;
+    color: var(--text-muted); border-bottom: 2px solid transparent;
+    transition: color 0.2s;
+  }
+  .faq-right .faq-tabs button.active { color: var(--white); border-bottom-color: var(--white); }
+  .faq-right .faq-tabs button:hover { color: var(--white); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--brand); }
+  .faq-item summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-item[open] summary svg { transform: rotate(180deg); }
+  .faq-item .faq-answer {
+    padding: 0 0 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* ══════════ CTA ══════════ */
+  .section-cta { padding: clamp(64px, 8vw, 120px) 48px; }
+  .cta-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    border-top: 1px solid var(--light-faded); border-bottom: 1px solid var(--light-faded);
+    padding: clamp(40px, 5vw, 64px) 0;
+  }
+  .cta-inner h2 { font-weight: 700; font-size: clamp(24px, 3vw, 40px); line-height: 1.2; letter-spacing: -0.02em; max-width: 650px; }
+  .cta-inner h2 .muted { color: var(--text-muted); }
+  .btn-primary { display: flex; align-items: center; gap: 14px; background: transparent; color: var(--white); text-decoration: none; font-size: 15px; font-weight: 500; border: 1px solid var(--light-faded); padding: 5px 28px 5px 5px; border-radius: 100vw; transition: all 0.3s; flex-shrink: 0; }
+  .btn-primary:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); }
+  .btn-primary .arrow-circle { width: 46px; height: 46px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .btn-primary .arrow-circle svg { width: 16px; height: 16px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ══════════ FOOTER ══════════ */
+  .footer { background: var(--bg); color: var(--white); padding: 0 48px; }
+  .footer-top { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; padding: clamp(48px, 6vw, 80px) 0; }
+  .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 16px; }
+  .footer-brand .footer-logo .logo-img { width: 32px; height: 32px; }
+  .footer-brand .footer-logo .fl-text { font-weight: 700; font-size: 14px; color: var(--white); }
+  .footer-brand .footer-logo .fl-dot { color: var(--brand); }
+  .footer-brand .footer-desc { font-weight: 400; font-size: 14px; color: var(--text-muted); line-height: 1.65; max-width: 340px; }
+  .footer-brand .footer-quote { font-style: italic; font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+  .footer-newsletter h4 { font-weight: 600; font-size: 15px; margin-bottom: 14px; }
+  .newsletter-input { display: flex; align-items: center; background: var(--dark-grey-2); border: 1px solid var(--light-faded); border-radius: 100vw; padding: 4px 4px 4px 16px; max-width: 400px; }
+  .newsletter-input .mail-icon { color: var(--text-muted); margin-right: 10px; flex-shrink: 0; }
+  .newsletter-input .mail-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .newsletter-input input { flex: 1; background: transparent; border: none; outline: none; color: var(--white); font-family: var(--font-primary); font-size: 14px; padding: 12px 0; }
+  .newsletter-input input::placeholder { color: var(--text-muted); }
+  .newsletter-input .submit-btn { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.1); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: background 0.3s; }
+  .newsletter-input .submit-btn:hover { background: rgba(255,255,255,0.2); }
+  .newsletter-input .submit-btn svg { width: 16px; height: 16px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .newsletter-terms { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; }
+  .footer-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--light-faded); }
+  .footer-links .col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links ul a { font-size: 13px; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-links ul a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; border-top: 1px solid var(--light-faded); }
+  .footer-bottom .copyright { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+  .footer-bottom .legal-links { display: flex; gap: 28px; }
+  .footer-bottom .legal-links a { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-bottom .legal-links a:hover { color: var(--white); }
+  .footer-powered { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .footer-powered a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-powered a:hover { color: var(--white); }
+
+  /* ── ANIMATIONS ── */
+  .fade-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .lib-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .articles-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .story-card { width: 340px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .lib-hero { padding: 64px 20px 48px; }
+    .stories-section { padding: 64px 0 64px 20px; }
+    .stories-header { padding-right: 20px; }
+    .stories-track { padding-right: 20px; }
+    .story-card { width: 300px; }
+    .articles-section { padding: 64px 20px; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .articles-tabs button { font-size: 20px; }
+    .faq-section { padding: 64px 20px; }
+    .section-cta { padding: 64px 20px; }
+    .footer { padding: 0 20px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .pagination { flex-direction: column; gap: 16px; }
+  }
+  @media (max-width: 480px) {
+    .story-card { width: 280px; }
+    .filter-pills button { font-size: 11px; padding: 6px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav>
+  <div class="nav-left">
+    <a href="brand-initiative/" class="logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="brand-initiative/">Anasayfa</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">Kurumsal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="kurumsal/hakkimizda.html">Hakkımızda</a><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></div></li>
+      <li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">İletişim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="iletisim.html">İletişim</a><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></div></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Powered by <a href="https://toganworks.com" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Toganworks</a></span>
+    <a href="iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="brand-initiative/">Anasayfa</a>
+  <a href="kurumsal/hakkimizda.html">Hakkımızda</a>
+  <a href="uyelik-firsatlari.html">Üyelik Fırsatları</a>
+  <a href="kutuphane.html">Mİ Kütüphanesi</a>
+  <a href="mi-lab.html">Mİ Lab</a>
+  <a href="iletisim.html">İletişim</a>
+  <a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a>
+  <a href="iletisim.html" class="mob-cta">İnisiyatife Katılın</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="lib-hero">
+  <p class="tag">Mİ Kütüphanesi</p>
+  <div class="lib-hero-grid">
+    <h1>Veriyi Stratejiye<br><span style="font-weight:300">Dönüştüren İçerikler</span></h1>
+    <p class="lib-hero-desc">Marka İnisiyatifi ekosisteminin entelektüel sermayesi. Vaka analizleri, akademik literatür ve özel podcast serileriyle stratejik farkındalık.</p>
+  </div>
+</section>
+
+<!-- ═══════════ VAKA ANALİZLERİ (Customer Stories) ═══════════ -->
+<section class="stories-section fade-section">
+  <div class="stories-header">
+    <h2>Vaka Analizleri</h2>
+    <div class="stories-arrows">
+      <button id="scroll-left" aria-label="Sola kaydır"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+      <button id="scroll-right" aria-label="Sağa kaydır"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="stories-track" id="stories-track">
+
+    <a href="#" onclick="return false" class="story-card">
+      <div class="story-img"><div class="story-pattern"></div><div class="story-gradient"></div></div>
+      <div class="story-body">
+        <h3>Küresel Pazara Açılan Türk Markasının Stratejik Dönüşümü</h3>
+        <p class="story-excerpt">Yerel bir markadan küresel oyuncuya geçiş sürecinde uygulanan stratejik adımlar ve elde edilen ölçülebilir sonuçlar...</p>
+        <span class="read-link">Analizi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a href="#" onclick="return false" class="story-card">
+      <div class="story-img"><div class="story-pattern"></div><div class="story-gradient"></div></div>
+      <div class="story-body">
+        <h3>E-Ticaret Markasının Marka Değerini 3x Artırma Hikayesi</h3>
+        <p class="story-excerpt">Dijital dönüşüm ve marka konumlandırma stratejileriyle elde edilen büyüme ve yatırımcı ilgisindeki artış...</p>
+        <span class="read-link">Analizi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a href="#" onclick="return false" class="story-card">
+      <div class="story-img"><div class="story-pattern"></div><div class="story-gradient"></div></div>
+      <div class="story-body">
+        <h3>B2B SaaS Markasının Avrupa Pazarına Giriş Stratejisi</h3>
+        <p class="story-excerpt">Cross-border operasyonlar, kültürel adaptasyon ve marka tutarlılığı üzerine kapsamlı vaka analizi...</p>
+        <span class="read-link">Analizi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a href="#" onclick="return false" class="story-card">
+      <div class="story-img"><div class="story-pattern"></div><div class="story-gradient"></div></div>
+      <div class="story-body">
+        <h3>Perakende Zincirinin Sürdürülebilir Marka Dönüşümü</h3>
+        <p class="story-excerpt">Sürdürülebilirlik odaklı yeniden konumlandırma ve müşteri algısındaki dönüşüm süreci...</p>
+        <span class="read-link">Analizi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a href="#" onclick="return false" class="story-card">
+      <div class="story-img"><div class="story-pattern"></div><div class="story-gradient"></div></div>
+      <div class="story-body">
+        <h3>FinTech Markasının Güven İnşası ve Büyüme Stratejisi</h3>
+        <p class="story-excerpt">Regüle sektörde marka güveni oluşturma, kullanıcı edinimi ve organik büyüme metrikleri...</p>
+        <span class="read-link">Analizi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═══════════ MAKALELER (Blog Articles / Research — White bg) ═══════════ -->
+<section class="articles-section fade-section">
+
+  <div class="articles-tabs">
+    <button class="active">Makaleler</button>
+    <button>Araştırma & Raporlar</button>
+  </div>
+
+  <div class="articles-toolbar">
+    <div class="filter-pills">
+      <button class="active">Tümü</button>
+      <button>Strateji</button>
+      <button>Küresel Marka</button>
+      <button>Dijital</button>
+      <button>Liderlik</button>
+      <button>Sürdürülebilirlik</button>
+    </div>
+    <div class="sort-control">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h12M3 18h6"/></svg>
+      Sırala
+      <select><option>En Yeni</option><option>En Çok Okunan</option></select>
+    </div>
+  </div>
+
+  <div class="articles-grid">
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Strateji</span><span>Mart 2026</span></div>
+      <h3>Türk Markalarının Küresel Rekabet Gücü: 2026 Değerlendirme Raporu</h3>
+      <p class="article-excerpt">Brand Finance verilerine dayalı kapsamlı analiz. Küresel sıralamadaki konum ve stratejik fırsatlar.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Küresel Marka</span><span>Şubat 2026</span></div>
+      <h3>Cross-Border Marka Yönetimi: Kültürel Kodları Evrensel Dile Çevirmek</h3>
+      <p class="article-excerpt">Uluslararası pazarlarda marka tutarlılığı ile yerel adaptasyon dengesini kurma rehberi.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Dijital</span><span>Ocak 2026</span></div>
+      <h3>Yapay Zeka Çağında Marka Stratejisi: Yeni Kurallar</h3>
+      <p class="article-excerpt">AI araçlarının marka inşası üzerindeki etkisi ve stratejik avantaja dönüştürme yöntemleri.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Liderlik</span><span>Aralık 2025</span></div>
+      <h3>Marka Liderliği ve Kurum Kültürü Arasındaki Stratejik Bağ</h3>
+      <p class="article-excerpt">İçeriden dışarıya marka inşası: liderlik vizyonunun marka algısına etkisi üzerine araştırma.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Sürdürülebilirlik</span><span>Kasım 2025</span></div>
+      <h3>Sürdürülebilir Markalaşma: Greenwashing'den Gerçek Etkiye</h3>
+      <p class="article-excerpt">Tüketici güveni, şeffaflık ve sürdürülebilirlik iletişiminde doğru stratejik yaklaşımlar.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a href="#" onclick="return false" class="article-card">
+      <div class="article-img"><div class="art-pattern"></div></div>
+      <div class="article-meta"><span>Strateji</span><span>Ekim 2025</span></div>
+      <h3>Marka Değeri Ölçümü: Metrikler, Modeller ve Gerçeklik</h3>
+      <p class="article-excerpt">Interbrand, Brand Finance ve BrandZ metodolojilerinin karşılaştırmalı analizi.</p>
+      <span class="read-article">Makaleyi Oku <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+  </div>
+
+  <div class="pagination">
+    <div class="page-numbers">
+      <span class="active">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span class="ellipsis">...</span><span>8</span>
+    </div>
+    <button class="btn-next">Sonraki <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<!-- ═══════════ SSS (FAQ) ═══════════ -->
+<section class="faq-section fade-section">
+  <div class="faq-grid">
+    <div class="faq-left">
+      <h3 class="faq-title">Sıkça Sorulan Sorular</h3>
+      <p class="faq-desc">Ekosistemimiz, üyelik süreci ve içeriklerimiz hakkında en çok merak edilen konulara yanıtlar.</p>
+      <div class="faq-contact-card">
+        <h4>Başka sorularınız mı var?</h4>
+        <p>İhtiyaçlarınızı paylaşın, ekibimiz size en kısa sürede dönüş sağlasın.</p>
+        <a href="iletisim.html">İletişime Geçin <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="faq-right">
+      <div class="faq-tabs">
+        <button class="active">Üyelik</button>
+        <button>İçerikler</button>
+        <button>Etkinlikler</button>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Marka İnisiyatifi'ne nasıl üye olabilirim? <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-answer">Başvuru formumuzu doldurarak üyelik sürecini başlatabilirsiniz. Başvurular Strateji Kurulu tarafından değerlendirmeye alınır ve uygun bulunan adaylara davet gönderilir.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Üyelik için belirli kriterler var mı? <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-answer">Evet. Marka İnisiyatifi, belirli profesyonel standartları karşılayan liderler ve vizyoner markalar için tasarlanmıştır. Sektör deneyimi, stratejik vizyon ve ekosisteme katkı potansiyeli değerlendirme kriterlerimiz arasındadır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Ekosisteme katılmanın avantajları nelerdir? <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-answer">Stratejik networking, mentörlük programları, özel içeriklere erişim, sektörel etkinlikler, vaka analizleri ve küresel marka stratejisi desteği avantajlarımız arasındadır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Mİ Kütüphanesi içeriklerine herkes erişebilir mi? <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-answer">Temel içerikler herkese açıktır. Ancak derinlemesine vaka analizleri, araştırma raporları ve özel podcast serileri ekosistem üyelerine özel olarak sunulmaktadır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>İçerik katkısında bulunabilir miyim? <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-answer">Evet, ekosistem üyeleri makale, vaka analizi ve araştırma katkısında bulunabilir. İçerikler editöryal süreçten geçtikten sonra Mİ Kütüphanesi'nde yayımlanır.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section-cta">
+  <div class="cta-inner">
+    <h2><span class="muted">Stratejik içeriklerle</span> markanızın potansiyelini keşfedin ve dönüştürün.</h2>
+    <a href="iletisim.html" class="btn-primary"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Başvuru Yapın</a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="brand-initiative/" class="footer-logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+      <p class="footer-desc">Strateji odaklı profesyonel marka ekosistemi. Vizyoner markaların ve liderlerin yer aldığı kurum ve düşünce ağı.</p>
+      <p class="footer-quote">"Markalaşmayı yeniden düşün."</p>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Haftalık bültenimize katılın</h4>
+      <form class="newsletter-input" id="newsletter-form">
+        <span class="mail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="submit-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="newsletter-terms">Abone olarak kullanım koşullarını kabul ediyorsunuz.</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div><div class="col-title">Kurumsal</div><ul><li><a href="brand-initiative/">Anasayfa</a></li><li><a href="kurumsal/hakkimizda.html">Hakkımızda</a></li><li><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></li></ul></div>
+    <div><div class="col-title">Kaynaklar</div><ul><li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li><li><a href="iletisim.html">İletişim</a></li><li><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></li></ul></div>
+    <div><div class="col-title">Ekosistem</div><ul><li><a href="brand-initiative/">Ekosistem Üyeleri</a></li><li><a href="brand-initiative/">Avantajlar</a></li><li><a href="brand-initiative/">Başvuru</a></li></ul></div>
+    <div><div class="col-title">Sosyal</div><ul><li><a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a></li><li><a href="https://x.com/markainisiyatif" target="_blank">X (Twitter)</a></li><li><a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a></li><li><a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">© 2026 Marka İnisiyatifi. Tüm hakları saklıdır.</span>
+    <div class="legal-links"><a href="brand-initiative/">Gizlilik Politikası</a><a href="brand-initiative/">Kullanım Koşulları</a><a href="brand-initiative/">KVKK</a></div>
+    <span class="footer-powered">Powered by <a href="https://toganworks.com" target="_blank">Toganworks</a></span>
+    
+  </div>
+</footer>
+
+<script>
+/* ── Scroll Reveal ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+/* ── Mobile Menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+}
+
+/* ── Stories Scroll ── */
+const track = document.getElementById('stories-track');
+const scrollLeftBtn = document.getElementById('scroll-left');
+const scrollRightBtn = document.getElementById('scroll-right');
+if (track && scrollLeftBtn && scrollRightBtn) {
+  scrollLeftBtn.addEventListener('click', () => { track.scrollBy({ left: -420, behavior: 'smooth' }); });
+  scrollRightBtn.addEventListener('click', () => { track.scrollBy({ left: 420, behavior: 'smooth' }); });
+}
+
+/* ── Articles Tabs ── */
+document.querySelectorAll('.articles-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.articles-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+/* ── Filter Pills ── */
+document.querySelectorAll('.filter-pills button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pills button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+/* ── FAQ Tabs ── */
+document.querySelectorAll('.faq-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.faq-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+/* ── Newsletter ── */
+const form = document.getElementById('newsletter-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const email = input?.value?.trim();
+    if (!email) return;
+    try {
+      window.location.href = 'mailto:info@markainisiyatifi.com?subject=Bülten Aboneliği&body=Bülten abonelik talebim: ' + encodeURIComponent(email);
+      input.value = ''; input.placeholder = 'Başarılı!'; setTimeout(() => { input.placeholder = 'E-posta adresiniz'; }, 2500);
+    } catch (err) { console.error(err); }
+  });
+}
+</script>
+</body>
+</html>

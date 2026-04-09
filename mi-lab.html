@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Mİ Lab | Marka İnisiyatifi</title>
+<meta name="description" content="Marka İnisiyatifi üyelerine özel stratejik destek programları.">
+<link rel="canonical" href="https://markainisiyatifi.com/mi-lab.html">
+<meta property="og:title" content="Mİ Lab | Marka İnisiyatifi">
+<meta property="og:description" content="Markanızı bir sonraki seviyeye taşımak için tasarlanmış stratejik programlar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markainisiyatifi.com/mi-lab.html">
+<meta property="og:image" content="https://markainisiyatifi.com/mis.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="keywords" content="marka inisiyatifi lab, marka programları, brand checkup, dijital marka analizi, marka stratejisi programları">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mİ Lab | Marka İnisiyatifi">
+<meta name="twitter:description" content="Markanızı bir sonraki seviyeye taşımak için tasarlanmış stratejik programlar.">
+<meta name="twitter:image" content="https://markainisiyatifi.com/mis.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --font-primary: 'Manrope', Arial, sans-serif;
+    --bg: #121212;
+    --bg-light: #f5f5f0;
+    --white: #ffffff;
+    --brand: #e12401;
+    --light-faded: rgba(255,255,255,0.12);
+    --dark-grey-1: #1a1a1a;
+    --dark-grey-2: #202020;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dark: #121212;
+    --text-dark-muted: rgba(18,18,18,0.45);
+    --border-light: rgba(18,18,18,0.08);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ══════════ NAVBAR ══════════ */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; border-bottom: 1px solid var(--light-faded); position: sticky; top: 0; z-index: 100; background: rgba(18,18,18,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+  .logo-img { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: #000; object-fit: cover; }
+  .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+  .dropdown-group { position: relative; }
+  .dropdown-btn { display: flex; align-items: center; gap: 4px; color: var(--text-muted); font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: none; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: color 0.2s, background 0.2s; }
+  .dropdown-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .dropdown-btn svg { width: 13px; height: 13px; }
+  .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); min-width: 200px; background: rgba(14,14,18,0.97); border: 1px solid var(--light-faded); border-radius: 12px; padding: 6px; padding-top: 16px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; backdrop-filter: blur(20px); z-index: 100; }
+  .dropdown-group:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown-menu a { display: block; padding: 9px 14px; font-size: 13px; color: rgba(255,255,255,0.5); border-radius: 8px; transition: background 0.15s, color 0.15s; text-decoration: none; white-space: nowrap; font-weight: 500; }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+  .nav-links > li > a { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s, background 0.2s; padding: 8px 14px; border-radius: 8px; }
+  .nav-links > li > a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .powered-header { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+  .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .powered-header a:hover { color: var(--white); }
+  .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .btn-demo { display: inline-flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; background: transparent; padding: 4px 18px 4px 4px; border-radius: 100vw; border: 1px solid var(--light-faded); transition: all 0.3s; }
+  .btn-demo:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-demo .arrow-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .btn-demo .arrow-circle svg { width: 12px; height: 12px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; width: 42px; height: 42px; background: rgba(255,255,255,0.05); border: 1px solid var(--light-faded); border-radius: 10px; cursor: pointer; gap: 5px; z-index: 1001; }
+  .hamburger span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+  .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .mobile-menu { position: fixed; inset: 0; z-index: 999; background: rgba(12,12,14,0.98); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a { font-size: 1.35rem; font-weight: 600; color: rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--brand); }
+  .mobile-menu .mob-cta { margin-top: 20px; background: var(--brand); color: var(--white); padding: 14px 36px; border-radius: 100vw; font-size: 14px; font-weight: 700; }
+
+  /* ══════════ HERO ══════════ */
+  .page-hero {
+    padding: clamp(100px, 12vw, 180px) 48px clamp(60px, 8vw, 100px);
+    border-bottom: 1px solid var(--light-faded);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .hero-left { flex: 1; }
+  .hero-right { flex-shrink: 0; }
+  .hero-tag { font-size: 13px; font-weight: 700; color: var(--brand); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 8px; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); }
+  @media (max-width: 768px) {
+    .page-hero { flex-direction: column; text-align: center; }
+    .hero-tag { justify-content: center; }
+    .hero-right { margin-top: 20px; }
+  }
+  .page-hero h1 {
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .hero-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+  .toganworks-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 10px 24px;
+    border-radius: 100vw;
+    border: 1px solid var(--light-faded);
+    background: rgba(255,255,255,0.03);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ══════════ PROGRAMS GRID ══════════ */
+  .programs-section {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: clamp(64px, 8vw, 120px) 48px;
+  }
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .program-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(18,18,18,0.06);
+  }
+  .program-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+  .card-gradient {
+    height: 100px;
+    border-radius: 12px;
+    margin: 16px 16px 0;
+    position: relative;
+  }
+  .card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .card-body {
+    padding: 24px 24px 28px;
+  }
+  .card-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+  }
+  .card-body p {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .card-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-link svg { width: 14px; height: 14px; fill: none; stroke: var(--brand); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Gradient variants */
+  .grad-red { background: linear-gradient(135deg, #c0392b, #e74c3c, #2c3e50); }
+  .grad-dark { background: linear-gradient(135deg, #2c3e50, #4a5568, #1a202c); }
+  .grad-purple { background: linear-gradient(135deg, #8e44ad, #e91e8b, #c0392b); }
+  .grad-orange { background: linear-gradient(135deg, #e67e22, #f39c12, #e74c3c); }
+  .grad-green { background: linear-gradient(135deg, #27ae60, #2ecc71, #1abc9c); }
+  .grad-rainbow { background: linear-gradient(135deg, #e74c3c, #f39c12, #27ae60, #3498db, #8e44ad); }
+  .grad-gold { background: linear-gradient(135deg, #f1c40f, #e67e22, #d4a017); }
+  .grad-grey { background: linear-gradient(135deg, #636e72, #2d3436, #4a5568); }
+  .grad-teal { background: linear-gradient(135deg, #00b894, #00cec9, #0984e3); }
+
+  /* ══════════ CTA ══════════ */
+  .section-cta {
+    padding: clamp(80px, 10vw, 140px) 48px;
+    text-align: center;
+    border-top: 1px solid var(--light-faded);
+  }
+  .section-cta .cta-tag {
+    font-size: 13px; font-weight: 700; color: var(--brand);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .section-cta .cta-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); }
+  .section-cta h2 {
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .section-cta h2 span { font-weight: 300; color: var(--text-muted); }
+  .section-cta .cta-sub {
+    font-size: 15px; color: var(--text-muted); line-height: 1.7;
+    max-width: 480px; margin: 0 auto 36px;
+  }
+  .btn-cta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background: transparent;
+    padding: 4px 18px 4px 4px;
+    border-radius: 100vw;
+    border: 1px solid var(--light-faded);
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: var(--font-primary);
+  }
+  .btn-cta-pill:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-cta-pill .arrow-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .btn-cta-pill .arrow-circle svg { width: 12px; height: 12px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Panel form */
+  .panel-form { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .panel-form input, .panel-form select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(18,18,18,0.12);
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .panel-form input:focus, .panel-form select:focus { border-color: var(--brand); }
+  .panel-form input::placeholder { color: rgba(18,18,18,0.35); }
+  .panel-form .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--brand);
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100vw;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    width: 100%;
+  }
+  .panel-form .btn-submit:hover { background: #c91f01; transform: translateY(-1px); }
+
+  /* ══════════ SIDE PANEL ══════════ */
+  .panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .panel-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 480px;
+    max-width: 90vw;
+    height: 100vh;
+    background: var(--white);
+    color: var(--text-dark);
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+  }
+  .side-panel.open { transform: translateX(0); }
+
+  .panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 28px 28px 0;
+  }
+  .panel-close {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(18,18,18,0.1);
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .panel-close:hover { background: rgba(18,18,18,0.05); }
+  .panel-close svg { width: 16px; height: 16px; stroke: var(--text-dark); fill: none; stroke-width: 2; stroke-linecap: round; }
+
+  .panel-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--brand); margin-bottom: 12px;
+  }
+  .panel-content { padding: 0 28px 28px; }
+  .panel-content h3 {
+    font-size: 24px; font-weight: 700;
+    letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.3;
+  }
+  .panel-content p {
+    font-size: 14px; color: var(--text-dark-muted);
+    line-height: 1.75; margin-bottom: 16px;
+  }
+  .panel-content p strong { color: var(--text-dark); }
+  .panel-highlight {
+    background: rgba(225,36,1,0.04);
+    border-left: 3px solid var(--brand);
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    margin: 24px 0;
+    font-size: 13px;
+    color: var(--text-dark-muted);
+    line-height: 1.7;
+  }
+  .panel-btn-wrap { margin-top: 28px; }
+  .panel-btn-wrap .btn-whatsapp { width: 100%; justify-content: center; }
+
+  /* ══════════ FOOTER ══════════ */
+  .footer { padding: clamp(60px, 8vw, 100px) 48px 0; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; padding-bottom: clamp(40px, 5vw, 64px); }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .footer-desc { font-size: 13px; font-weight: 400; color: var(--text-muted); line-height: 1.7; max-width: 360px; }
+  .footer-quote { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.3); font-style: italic; margin-top: 4px; }
+  .footer-newsletter h4 { font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+  .newsletter-input { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--light-faded); padding-bottom: 4px; }
+  .newsletter-input .mail-icon svg { width: 18px; height: 18px; fill: none; stroke: var(--text-muted); stroke-width: 1.5; }
+  .newsletter-input input { flex: 1; background: none; border: none; outline: none; color: var(--white); font-family: var(--font-primary); font-size: 14px; padding: 12px 0; }
+  .newsletter-input input::placeholder { color: var(--text-muted); }
+  .newsletter-input .submit-btn { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.1); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: background 0.3s; }
+  .newsletter-input .submit-btn:hover { background: rgba(255,255,255,0.2); }
+  .newsletter-input .submit-btn svg { width: 16px; height: 16px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .newsletter-terms { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; }
+  .footer-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--light-faded); }
+  .footer-links .col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links ul a { font-size: 13px; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-links ul a:hover { color: var(--white); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-top: 1px solid var(--light-faded); flex-wrap: wrap; gap: 12px; }
+  .copyright { font-size: 11px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px; }
+  .legal-links { display: flex; gap: 20px; }
+  .legal-links a { font-size: 11px; font-weight: 500; color: var(--text-muted); text-decoration: none; letter-spacing: 0.5px; transition: color 0.3s; }
+  .legal-links a:hover { color: var(--white); }
+  .footer-powered { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .footer-powered a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-powered a:hover { color: var(--white); }
+
+  /* ══════════ ANIMATIONS ══════════ */
+  .fade-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+  /* ══════════ RESPONSIVE ══════════ */
+  @media (max-width: 1024px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .page-hero { padding: 64px 20px 48px; }
+    .programs-section { padding: 64px 20px; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .section-cta { padding: 64px 20px; }
+    .footer { padding: 0 20px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .side-panel { width: 100%; max-width: 100vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav>
+  <div class="nav-left">
+    <a href="brand-initiative/" class="logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="brand-initiative/">Anasayfa</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">Kurumsal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="kurumsal/hakkimizda.html">Hakkımızda</a><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></div></li>
+      <li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html" style="color:var(--white)">Mİ Lab</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">İletişim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="iletisim.html">İletişim</a><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></div></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Powered by <a href="https://toganworks.com" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Toganworks</a></span>
+    <a href="iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="brand-initiative/">Anasayfa</a>
+  <a href="kurumsal/hakkimizda.html">Hakkımızda</a>
+  <a href="uyelik-firsatlari.html">Üyelik Fırsatları</a>
+  <a href="kutuphane.html">Mİ Kütüphanesi</a>
+  <a href="mi-lab.html">Mİ Lab</a>
+  <a href="iletisim.html">İletişim</a>
+  <a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a>
+  <a href="iletisim.html" class="mob-cta">İnisiyatife Katılın</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="page-hero">
+  <div class="hero-left">
+    <p class="hero-tag">Programlar</p>
+    <h1>Destek <span style="font-weight:300">Programları</span></h1>
+    <p class="hero-desc">Markanızı bir sonraki seviyeye taşımak için tasarlanmış stratejik programlar.</p>
+  </div>
+  <div class="hero-right">
+    <a href="iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Ücretsiz Programa Katılın</a>
+  </div>
+</section>
+
+<!-- ═══════════ PROGRAMS ═══════════ -->
+<section class="programs-section fade-section">
+  <div class="programs-grid">
+
+    <div class="program-card" onclick="openPanel(0)">
+      <div class="card-gradient grad-red"><span class="card-tag">Lab 001</span></div>
+      <div class="card-body">
+        <h3>Brand Checkup</h3>
+        <p>Markanızın güçlü yönlerini, gelişim alanlarını ve potansiyel risklerini tespit eden kapsamlı bir analiz programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(1)">
+      <div class="card-gradient grad-dark"><span class="card-tag">Lab 002</span></div>
+      <div class="card-body">
+        <h3>CX Health Check</h3>
+        <p>Markanızın müşteri deneyimi süreçlerini analiz eden ve stratejik iyileştirme alanlarını belirleyen bir değerlendirme programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(2)">
+      <div class="card-gradient grad-purple"><span class="card-tag">Lab 003</span></div>
+      <div class="card-body">
+        <h3>Women in Brand</h3>
+        <p>Kadın girişimcilerin güçlenmesi ve başarıya ulaşması için tasarlanmış, marka geliştirme alanlarını ve potansiyel fırsatları belirlemeye yönelik özel bir destek programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(3)">
+      <div class="card-gradient grad-orange"><span class="card-tag">Lab 004</span></div>
+      <div class="card-body">
+        <h3>Brand Starter Kit</h3>
+        <p>Markalaşma yolculuğuna ilk adımını atan girişimciler için temel marka yapı taşlarını oluşturan bir başlangıç programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(4)">
+      <div class="card-gradient grad-green"><span class="card-tag">Lab 005</span></div>
+      <div class="card-body">
+        <h3>Digital Pulse</h3>
+        <p>Markanızın dijital varlığını ve online görünürlüğünü değerlendiren, stratejik iyileştirme alanlarını belirleyen bir dijital analiz programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(5)">
+      <div class="card-gradient grad-rainbow"><span class="card-tag">Lab 006</span></div>
+      <div class="card-body">
+        <h3>Pitch Craft</h3>
+        <p>Markanızı yatırımcılara, müşterilere ve iş ortaklarına etkili bir şekilde anlatabilmeniz için tasarlanan bir marka sunum geliştirme programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(6)">
+      <div class="card-gradient grad-gold"><span class="card-tag">Lab 007</span></div>
+      <div class="card-body">
+        <h3>Content Compass</h3>
+        <p>Markanızın içerik stratejisini değerlendiren ve hedef kitlelerle güçlü bağ kuracak bir içerik yol haritası oluşturan stratejik bir program.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(7)">
+      <div class="card-gradient grad-grey"><span class="card-tag">Lab 008</span></div>
+      <div class="card-body">
+        <h3>Price Architect</h3>
+        <p>Markanızın fiyatlandırma stratejisini analiz eden, değerlerin değerini artıracak ve kârlılığı güçlendirecek bir konumlandırma programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+    <div class="program-card" onclick="openPanel(8)">
+      <div class="card-gradient grad-teal"><span class="card-tag">Lab 009</span></div>
+      <div class="card-body">
+        <h3>Founder's Lens</h3>
+        <p>Kurucu kimliği ve marka kimliği arasındaki ilişkiyi analiz eden ve kişisel markayı kurumsal markayla uyumlu hale getiren bir değerlendirme programı.</p>
+        <span class="card-link">Detaylı İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section-cta fade-section">
+  <p class="cta-tag">İletişim</p>
+  <h2>Programlara Katılmak İçin <span>Bize Ulaşın.</span></h2>
+  <p class="cta-sub">Tüm programlarımız Toganworks işbirliği ile sunulmaktadır.</p>
+  <a href="iletisim.html" class="btn-cta-pill"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Ücretsiz Programa Katılın</a>
+</section>
+
+<!-- ═══════════ SIDE PANEL ═══════════ -->
+<div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
+<div class="side-panel" id="side-panel">
+  <div class="panel-header">
+    <div>
+      <p class="panel-tag" id="panel-tag"></p>
+    </div>
+    <button class="panel-close" onclick="closePanel()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="panel-content">
+    <h3 id="panel-title"></h3>
+    <p id="panel-desc1"></p>
+    <p id="panel-desc2"></p>
+    <div class="panel-highlight" id="panel-highlight"></div>
+    <form class="panel-form" id="panel-form">
+      <input type="text" name="name" placeholder="Ad Soyad" required>
+      <input type="email" name="email" placeholder="E-posta" required>
+      <input type="tel" name="phone" placeholder="Telefon">
+      <input type="hidden" name="program" id="panel-program">
+      <button type="submit" class="btn-submit">Hemen Katılın</button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="brand-initiative/" class="footer-logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+      <p class="footer-desc">Strateji odaklı profesyonel marka ekosistemi. Vizyoner markaların ve liderlerin yer aldığı kurum ve düşünce ağı.</p>
+      <p class="footer-quote">"Markalaşmayı yeniden düşün."</p>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Haftalık bültenimize katılın</h4>
+      <form class="newsletter-input" id="newsletter-form">
+        <span class="mail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="submit-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="newsletter-terms">Abone olarak kullanım koşullarını kabul ediyorsunuz.</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div><div class="col-title">Kurumsal</div><ul><li><a href="brand-initiative/">Anasayfa</a></li><li><a href="kurumsal/hakkimizda.html">Hakkımızda</a></li><li><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></li></ul></div>
+    <div><div class="col-title">Kaynaklar</div><ul><li><a href="kutuphane.html">Mİ Kütüphanesi</a></li><li><a href="mi-lab.html">Mİ Lab</a></li><li><a href="iletisim.html">İletişim</a></li><li><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></li></ul></div>
+    <div><div class="col-title">Ekosistem</div><ul><li><a href="brand-initiative/">Ekosistem Üyeleri</a></li><li><a href="brand-initiative/">Avantajlar</a></li><li><a href="brand-initiative/">Başvuru</a></li></ul></div>
+    <div><div class="col-title">Sosyal</div><ul><li><a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a></li><li><a href="https://x.com/markainisiyatif" target="_blank">X (Twitter)</a></li><li><a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a></li><li><a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">© 2026 Marka İnisiyatifi. Tüm hakları saklıdır.</span>
+    <div class="legal-links"><a href="brand-initiative/">Gizlilik Politikası</a><a href="brand-initiative/">Kullanım Koşulları</a><a href="brand-initiative/">KVKK</a></div>
+    <span class="footer-powered">Powered by <a href="https://toganworks.com" target="_blank">Toganworks</a></span>
+    
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+}
+
+// Programs data
+const programs = [
+  {
+    tag: 'Lab 001',
+    title: 'Brand Checkup',
+    desc1: 'Brand Checkup, markanızın mevcut durumunu detaylı bir şekilde analiz ederek hangi alanlarda iyileştirme yapılabileceğini ve hangi güçlü yönlerin daha da güçlendirilebileceğini ortaya koyuyor.',
+    desc2: 'Markanızın performansı değerlendirilirken, pazar konumunuz gözetiliyor ve size doğru yönleri gösteren kapsamlı bir rapor sunuluyor. Hem mevcut durumunuza dair net bir analiz hem de gelecekteki büyüme potansiyelinizi en iyi şekilde değerlendiriyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 002',
+    title: 'CX Health Check',
+    desc1: 'CX Health Check, markanızın müşteri deneyimi süreçlerini uçtan uca analiz ederek memnuniyet, sadakat ve geri dönüş oranlarınızı değerlendiriyor.',
+    desc2: 'Müşteri yolculuğunuzdaki temas noktalarını, iletişim kalitesini ve servis süreçlerinizi inceleyerek stratejik iyileştirme önerileri sunuyoruz. Müşteri deneyimini rakiplerinizden ayrıştıran bir avantaja dönüştürün.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 003',
+    title: 'Women in Brand',
+    desc1: 'Women in Brand, kadın girişimcilerin markalaşma süreçlerinde güçlenmelerini destekleyen, stratejik rehberlik ve mentorluk sunan özel bir programdır.',
+    desc2: 'Marka geliştirme, konumlandırma ve büyüme stratejileri konusunda kapsamlı bir destek paketi sunarak kadın liderliğindeki markaların potansiyellerini en üst düzeye çıkarmayı hedefliyoruz.',
+    highlight: 'Kadın girişimcilerin ekosistemde daha güçlü bir yer edinmesi amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 004',
+    title: 'Brand Starter Kit',
+    desc1: 'Brand Starter Kit, markalaşma yolculuğuna yeni başlayan girişimciler için temel yapı taşlarını oluşturan kapsamlı bir başlangıç programıdır.',
+    desc2: 'Marka kimliği, hedef kitle analizi, konumlandırma ve temel iletişim stratejisi gibi kritik alanlarda rehberlik sunarak ilk adımlarınızı sağlam atmanızı sağlıyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 005',
+    title: 'Digital Pulse',
+    desc1: 'Digital Pulse, markanızın dijital varlığını ve online görünürlüğünü kapsamlı bir şekilde değerlendiren stratejik bir analiz programıdır.',
+    desc2: 'Web sitenizden sosyal medya performansınıza, SEO durumunuzdan dijital reklam etkinliğinize kadar tüm dijital kanallarınızı inceleyerek iyileştirme yol haritanızı çıkarıyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 006',
+    title: 'Pitch Craft',
+    desc1: 'Pitch Craft, markanızı yatırımcılara, müşterilere ve iş ortaklarına etkili bir şekilde sunabilmeniz için tasarlanmış bir sunum geliştirme programıdır.',
+    desc2: 'Marka hikayenizi, değer önerinizi ve rekabet avantajlarınızı etkileyici bir anlatıya dönüştürerek her platformda güçlü bir izlenim bırakmanızı sağlıyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 007',
+    title: 'Content Compass',
+    desc1: 'Content Compass, markanızın içerik stratejisini değerlendiren ve hedef kitlelerle güçlü bağ kuracak bir yol haritası oluşturan stratejik bir programdır.',
+    desc2: 'Mevcut içerik performansınızı analiz ediyor, hedef kitlenizin beklentileriyle uyumlu bir içerik planı oluşturuyor ve marka sesinizi güçlendiren stratejiler sunuyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 008',
+    title: 'Price Architect',
+    desc1: 'Price Architect, markanızın fiyatlandırma stratejisini analiz eden ve kârlılığı güçlendirecek bir konumlandırma programıdır.',
+    desc2: 'Değer algısı, rekabet analizi ve fiyat elastikiyeti gibi kritik parametreleri değerlendirerek markanızın fiyatlandırma mimarisini optimize ediyoruz.',
+    highlight: 'Türkiye\'den güçlü ve rekabetçi markaların çıkmasına katkı sağlamak amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  },
+  {
+    tag: 'Lab 009',
+    title: 'Founder\'s Lens',
+    desc1: 'Founder\'s Lens, kurucu kimliği ve marka kimliği arasındaki ilişkiyi derinlemesine analiz eden bir değerlendirme programıdır.',
+    desc2: 'Kişisel markanızı kurumsal markanızla uyumlu hale getirerek tutarlı, güvenilir ve sürdürülebilir bir marka mimarisi oluşturmanıza yardımcı oluyoruz.',
+    highlight: 'Kurucu kimliği ile marka kimliğinin uyumlu hale getirilmesi amacıyla bu program sınırlı bir süre ücretsiz olarak sunulmaktadır.'
+  }
+];
+
+const overlay = document.getElementById('panel-overlay');
+const panel = document.getElementById('side-panel');
+
+function openPanel(i) {
+  const p = programs[i];
+  document.getElementById('panel-tag').textContent = p.tag;
+  document.getElementById('panel-title').textContent = p.title;
+  document.getElementById('panel-desc1').textContent = p.desc1;
+  document.getElementById('panel-desc2').textContent = p.desc2;
+  document.getElementById('panel-highlight').textContent = p.highlight;
+  document.getElementById('panel-program').value = p.title;
+  document.getElementById('panel-form').reset();
+  document.getElementById('panel-program').value = p.title;
+  overlay.classList.add('open');
+  panel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePanel() {
+  overlay.classList.remove('open');
+  panel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
+
+const panelForm = document.getElementById('panel-form');
+if (panelForm) {
+  panelForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(panelForm));
+    const subject = encodeURIComponent('Mİ Lab Başvuru: ' + (data.program || ''));
+    const body = encodeURIComponent('Ad Soyad: ' + (data.name || '') + '\nE-posta: ' + (data.email || '') + '\nTelefon: ' + (data.phone || '') + '\nProgram: ' + (data.program || ''));
+    window.location.href = 'mailto:info@markainisiyatifi.com?subject=' + subject + '&body=' + body;
+    panelForm.reset();
+    closePanel();
+  });
+}
+
+const form = document.getElementById('newsletter-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+    const subject = encodeURIComponent('Bülten Aboneliği');
+    const body = encodeURIComponent('Bülten abonelik talebi.\n\nE-posta: ' + email);
+    window.location.href = 'mailto:info@markainisiyatifi.com?subject=' + subject + '&body=' + body;
+    form.querySelector('input[type="email"]').value = '';
+  });
+}
+</script>
+</body>
+</html>

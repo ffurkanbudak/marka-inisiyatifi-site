@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Hakkımızda | Marka İnisiyatifi</title>
+<meta name="description" content="Marka İnisiyatifi, sürdürülebilir marka inşası ve küresel ölçekleme odaklı, değerlendirme esaslı profesyonel bir ekosistemdir.">
+<link rel="canonical" href="https://markainisiyatifi.com/kurumsal/hakkimizda.html">
+<meta property="og:title" content="Hakkımızda | Marka İnisiyatifi">
+<meta property="og:description" content="Sürdürülebilir marka inşası ve küresel ölçekleme odaklı profesyonel ekosistem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markainisiyatifi.com/kurumsal/hakkimizda.html">
+<meta property="og:image" content="https://markainisiyatifi.com/mis.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="keywords" content="marka inisiyatifi hakkımızda, marka ekosistemi, sürdürülebilir markalaşma, küresel marka stratejisi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hakkımızda | Marka İnisiyatifi">
+<meta name="twitter:description" content="Sürdürülebilir marka inşası ve küresel ölçekleme odaklı profesyonel ekosistem.">
+<meta name="twitter:image" content="https://markainisiyatifi.com/mis.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --font-primary: 'Manrope', Arial, sans-serif;
+    --bg: #121212;
+    --bg-light: #f5f5f0;
+    --white: #ffffff;
+    --brand: #e12401;
+    --brand-red: #e12401;
+    --light-faded: rgba(255,255,255,0.12);
+    --dark-grey-1: #1a1a1a;
+    --dark-grey-2: #202020;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dark: #121212;
+    --text-dark-muted: rgba(18,18,18,0.45);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ══════════════════════════════════════════
+     NAVBAR
+  ══════════════════════════════════════════ */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    border-bottom: 1px solid var(--light-faded);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(18,18,18,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #000;
+    object-fit: cover;
+  }
+
+  .logo-text {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .logo-text .dot { color: var(--brand); }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .dropdown-group { position: relative; }
+
+  .dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+  }
+  .dropdown-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .dropdown-btn svg { width: 13px; height: 13px; }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    min-width: 200px;
+    background: rgba(14,14,18,0.97);
+    border: 1px solid var(--light-faded);
+    border-radius: 12px;
+    padding: 6px;
+    padding-top: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+
+  .dropdown-group:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+
+  .nav-links > li > a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s, background 0.2s;
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+  .nav-links > li > a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+
+  .powered-header { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+  .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .powered-header a:hover { color: var(--white); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    background: transparent;
+    padding: 4px 18px 4px 4px;
+    border-radius: 100vw;
+    border: 1px solid var(--light-faded);
+    transition: all 0.3s;
+  }
+  .btn-demo:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-demo .arrow-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--brand);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .btn-demo .arrow-circle svg {
+    width: 12px; height: 12px; fill: none;
+    stroke: var(--white); stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--light-faded);
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+  }
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(12,12,14,0.98);
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--brand); }
+  .mobile-menu .mob-cta {
+    margin-top: 20px;
+    background: var(--brand);
+    color: var(--white);
+    padding: 14px 36px;
+    border-radius: 100vw;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════════
+     PAGE HERO
+  ══════════════════════════════════════════ */
+  .page-hero {
+    padding: clamp(80px, 10vw, 140px) 48px clamp(60px, 8vw, 100px);
+  }
+
+  .page-hero .tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .page-hero h1 {
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 68px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+
+  .page-hero h1 .muted {
+    color: var(--text-muted);
+  }
+
+  .page-hero .intro {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ══════════════════════════════════════════
+     MISSION / VISION (Light)
+  ══════════════════════════════════════════ */
+  .section-mv {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: clamp(64px, 8vw, 120px) 48px;
+  }
+
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1200px;
+  }
+
+  .mv-card {
+    background: var(--white);
+    border: 1px solid rgba(18,18,18,0.06);
+    border-radius: 20px;
+    padding: 48px;
+  }
+
+  .mv-card .num {
+    font-weight: 800;
+    font-size: 48px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  .mv-card h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+  }
+
+  .mv-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  /* ══════════════════════════════════════════
+     FOCUS AREAS (Dark)
+  ══════════════════════════════════════════ */
+  .section-focus {
+    background: var(--bg);
+    color: var(--white);
+    padding: clamp(80px, 10vw, 140px) 48px;
+  }
+
+  .section-focus .tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .section-focus h2 {
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section-focus .sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 56px;
+    line-height: 1.6;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .focus-card {
+    background: var(--dark-grey-1);
+    border: 1px solid var(--light-faded);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: border-color 0.3s;
+  }
+  .focus-card:hover { border-color: rgba(255,255,255,0.25); }
+
+  .focus-card .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .focus-card .icon svg {
+    width: 20px; height: 20px; fill: none;
+    stroke: var(--white); stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .focus-card h3 {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .focus-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ══════════════════════════════════════════
+     STATS (Light)
+  ══════════════════════════════════════════ */
+  .section-stats {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: clamp(64px, 8vw, 100px) 48px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stat-item .stat-num {
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .stat-item .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dark-muted);
+  }
+
+  /* ══════════════════════════════════════════
+     CTA
+  ══════════════════════════════════════════ */
+  .section-cta {
+    background: var(--bg);
+    padding: clamp(64px, 8vw, 120px) 48px;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-top: 1px solid var(--light-faded);
+    border-bottom: 1px solid var(--light-faded);
+    padding: clamp(40px, 5vw, 64px) 0;
+  }
+
+  .cta-inner h2 {
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    max-width: 600px;
+  }
+
+  .cta-inner h2 .muted { color: var(--text-muted); }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid var(--light-faded);
+    padding: 5px 28px 5px 5px;
+    border-radius: 100vw;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .btn-primary:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); }
+
+  .btn-primary .arrow-circle {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--brand);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .btn-primary .arrow-circle svg {
+    width: 16px; height: 16px; fill: none;
+    stroke: var(--white); stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ══════════════════════════════════════════
+     CAREERS SLIDER
+  ══════════════════════════════════════════ */
+  .careers-section {
+    padding: clamp(64px, 8vw, 100px) 0 clamp(64px, 8vw, 100px) 48px;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .careers-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-right: 48px;
+  }
+  .careers-header h2 {
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: -0.02em;
+  }
+  .careers-arrows {
+    display: flex;
+    gap: 12px;
+  }
+  .careers-arrows button {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--light-faded); background: transparent;
+    color: var(--white); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .careers-arrows button:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .careers-arrows button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .careers-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-right: 48px;
+  }
+  .careers-track::-webkit-scrollbar { display: none; }
+  .career-card {
+    min-width: 340px;
+    max-width: 340px;
+    background: var(--dark-grey-2);
+    border: 1px solid var(--light-faded);
+    border-radius: 16px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .career-card:hover { border-color: rgba(255,255,255,0.25); }
+  .career-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--brand);
+    background: rgba(225,36,1,0.1);
+    padding: 5px 12px;
+    border-radius: 100vw;
+    width: fit-content;
+  }
+  .career-card h3 {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .career-en {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .career-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .career-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 4px;
+  }
+  .career-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  @media (max-width: 768px) {
+    .careers-section { padding-left: 20px; }
+    .careers-header { padding-right: 20px; }
+    .careers-track { padding-right: 20px; }
+    .career-card { min-width: 280px; max-width: 280px; }
+  }
+
+  /* ══════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════ */
+  .footer {
+    background: var(--bg);
+    color: var(--white);
+    padding: 0 48px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    padding: clamp(48px, 6vw, 80px) 0;
+  }
+
+  .footer-brand .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .footer-brand .footer-logo .logo-img { width: 32px; height: 32px; }
+  .footer-brand .footer-logo .fl-text { font-weight: 700; font-size: 14px; color: var(--white); }
+  .footer-brand .footer-logo .fl-dot { color: var(--brand); }
+
+  .footer-brand .footer-desc {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 340px;
+  }
+
+  .footer-brand .footer-quote {
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 12px;
+  }
+
+  .footer-newsletter h4 { font-weight: 600; font-size: 15px; margin-bottom: 14px; }
+
+  .newsletter-input {
+    display: flex;
+    align-items: center;
+    background: var(--dark-grey-2);
+    border: 1px solid var(--light-faded);
+    border-radius: 100vw;
+    padding: 4px 4px 4px 16px;
+    max-width: 400px;
+  }
+
+  .newsletter-input .mail-icon { color: var(--text-muted); margin-right: 10px; flex-shrink: 0; }
+  .newsletter-input .mail-icon svg {
+    width: 18px; height: 18px; fill: none;
+    stroke: currentColor; stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .newsletter-input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  .newsletter-input input::placeholder { color: var(--text-muted); }
+
+  .newsletter-input .submit-btn {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0;
+    transition: background 0.3s;
+  }
+  .newsletter-input .submit-btn:hover { background: rgba(255,255,255,0.2); }
+  .newsletter-input .submit-btn svg {
+    width: 16px; height: 16px; fill: none;
+    stroke: var(--white); stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .newsletter-terms {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: clamp(40px, 5vw, 64px) 0;
+    border-top: 1px solid var(--light-faded);
+  }
+
+  .footer-links .col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links ul a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px solid var(--light-faded);
+  }
+
+  .footer-bottom .copyright {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .footer-bottom .legal-links { display: flex; gap: 28px; }
+  .footer-bottom .legal-links a {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-bottom .legal-links a:hover { color: var(--white); }
+
+  .footer-powered {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .footer-powered a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-powered a:hover { color: var(--white); }
+
+  /* ── COMMUNITY SECTION ── */
+  .section-community {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: clamp(80px, 10vw, 140px) 48px;
+  }
+  .community-heading {
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto clamp(48px, 6vw, 80px);
+    color: var(--text-dark);
+  }
+  .community-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: clamp(48px, 6vw, 80px);
+  }
+  .community-cols p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-dark-muted);
+  }
+  .community-cols p strong {
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+  .community-btn-wrap {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .btn-community {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background: transparent;
+    padding: 4px 18px 4px 4px;
+    border-radius: 100vw;
+    border: 1px solid rgba(18,18,18,0.15);
+    transition: all 0.3s;
+  }
+  .btn-community:hover {
+    border-color: var(--brand);
+    background: rgba(225,36,1,0.06);
+    transform: translateY(-1px);
+  }
+  .btn-community .arrow-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--brand);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .btn-community .arrow-circle svg {
+    width: 12px; height: 12px; fill: none;
+    stroke: #fff; stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .mv-grid { grid-template-columns: 1fr; }
+    .focus-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .page-hero { padding: 64px 20px 48px; }
+    .section-mv { padding: 64px 20px; }
+    .section-focus { padding: 64px 20px; }
+    .focus-grid { grid-template-columns: 1fr; }
+    .section-community { padding: 64px 20px; }
+    .community-cols { grid-template-columns: 1fr; }
+    .section-stats { padding: 64px 20px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .section-cta { padding: 64px 20px; }
+    .footer { padding: 0 20px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+  }
+
+  @media (max-width: 480px) {
+    .focus-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav>
+  <div class="nav-left">
+    <a href="../brand-initiative/" class="logo"><img src="../mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="../brand-initiative/">Anasayfa</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">Kurumsal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="hakkimizda.html">Hakkımızda</a><a href="../uyelik-firsatlari.html">Üyelik Fırsatları</a></div></li>
+      <li><a href="../kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="../mi-lab.html">Mİ Lab</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">İletişim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="../iletisim.html">İletişim</a><a href="../kampus-temsilciligi.html">Kampüs Temsilciliği</a></div></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Powered by <a href="https://toganworks.com" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Toganworks</a></span>
+    <a href="../iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../brand-initiative/">Anasayfa</a>
+  <a href="hakkimizda.html">Hakkımızda</a>
+  <a href="../uyelik-firsatlari.html">Üyelik Fırsatları</a>
+  <a href="../kutuphane.html">Mİ Kütüphanesi</a>
+  <a href="../mi-lab.html">Mİ Lab</a>
+  <a href="../iletisim.html">İletişim</a>
+  <a href="../kampus-temsilciligi.html">Kampüs Temsilciliği</a>
+  <a href="../iletisim.html" class="mob-cta">İnisiyatife Katılın</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="page-hero">
+  <p class="tag">Kurumsal Vizyon</p>
+  <h1>Sınırları aşan bir <span class="muted" style="font-weight:300">marka zihniyeti.</span></h1>
+  <p class="intro">Marka İnisiyatifi, günü kurtaran geçici pazarlama taktiklerini reddeder; odağına doğrudan sürdürülebilir marka inşasını ve küresel ölçeklenmeyi alır. Uluslararası arenada rekabet edecek markaların mimarisini kuracak karar alıcıları, stratejistleri ve girişimcileri tek bir kapalı ekosistemde birleştirir.</p>
+</section>
+
+<!-- ═══════════ MİSYON & VİZYON ═══════════ -->
+<section class="section-mv fade-section">
+  <div class="mv-grid">
+    <div class="mv-card">
+      <div class="num">01</div>
+      <h2>Misyon</h2>
+      <p>Uluslararası arenada rekabet edecek markaların mimarisini kuracak karar alıcıları, stratejistleri ve girişimcileri tek bir kapalı ekosistemde birleştirmek.</p>
+      <p>Sektörel standartları yeniden belirlemek ve ekosistemdeki üyeler için kalıcı, ölçülebilir değer üretmek. Türk markalarını küresel sahneye taşıyacak stratejik altyapıyı inşa etmek.</p>
+    </div>
+    <div class="mv-card">
+      <div class="num">02</div>
+      <h2>Vizyon</h2>
+      <p>Türk markalarını dünyanın en değerli 500 markası arasına taşımak. Yeni nesil bir marka liderliği ekosistemi yaratmak.</p>
+      <p>Küresel ölçekte rekabet edebilir, sürdürülebilir ve değer odaklı markalar yetiştiren, sektörel ezberleri yıkan bir düşünce ve eylem platformu olmak.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ODAK ALANLARI ═══════════ -->
+<section class="section-focus fade-section">
+  <p class="tag">Stratejik Odak Alanları</p>
+  <h2>Temel faaliyet alanları</h2>
+  <p class="sub">Marka İnisiyatifi'nin ekosisteme sunduğu değer önerisi.</p>
+  <div class="focus-grid">
+    <div class="focus-card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 3h20M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3m7 21 5-5 5 5"/></svg></div>
+      <h3>Sürdürülebilir Marka İnşası</h3>
+      <p>Geçici taktikler yerine kalıcı marka değeri oluşturan uzun vadeli stratejiler.</p>
+    </div>
+    <div class="focus-card">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3>Küresel Ölçekleme</h3>
+      <p>Uluslararası pazarlara açılma, cross-border operasyonlar ve global büyüme stratejileri.</p>
+    </div>
+    <div class="focus-card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+      <h3>Sektörel Standartları Belirleme</h3>
+      <p>Endüstri normlarını yeniden tanımlayan araştırmalar, raporlar ve politika önerileri.</p>
+    </div>
+    <div class="focus-card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/></svg></div>
+      <h3>Ölçülebilir Değer Üretimi</h3>
+      <p>Somut metriklerle izlenebilir ROI, büyüme oranları ve marka değeri artışı.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COMMUNITY ═══════════ -->
+<section class="section-community fade-section">
+  <h2 class="community-heading"><span style="font-weight:300">Türkiye'nin Marka Girişimcileri</span> Marka İnisiyatifi'nde Buluşuyor!</h2>
+
+  <div class="community-cols">
+    <p><strong>Herkes, sadece efor sarf ederek günü kurtarmak yerine; kurduğu sistemle ve geliştirdiği stratejiyle zamanın ötesinde bir değer üretmeyi hayal eder.</strong> Bunun yolu; sürekli eğitim, inovasyon ve güçlü bir topluluk öğreniminden geçer. Marka İnisiyatifi; işini global pazarlara taşımak, markasını doğru konumlandırmak ve farklılaştırmak isteyenlere rehberlik ediyor.</p>
+    <p>Türkiye'nin en yetenekli stratejistleri, yaratıcıları ve uzmanları; fikirlerini dünya standartlarında bir topluluğun desteğiyle bir adım öteye taşıyor. <strong>İnsanların kullanabileceği, faydalanabileceği ve küresel ölçekte rekabet edebileceği nitelikli iş modelleri geliştiren</strong> profesyoneller, hem kendi projelerini büyütüyor hem de iş ekosistemine değer katıyor.</p>
+    <p>Farklı disiplinlerden profesyoneller ve üreticiler; bilgi birikimlerini ve emeklerini <strong>marka zihniyeti ve yenilikçi girişimcilik yaklaşımıyla katma değere dönüştürüyor.</strong> Stratejik bir vizyon ve ölçeklenebilir bir yapı kurmayanlar ise, yalnızca operasyonel süreçler içinde zamanlarını satmaya devam ediyor.</p>
+  </div>
+
+  <div class="community-btn-wrap">
+    <a href="../kampus-temsilciligi.html" class="btn-community"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Kampüs Temsilcisi Olun</a>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<section class="section-stats fade-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Kurumsal Profesyonel</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Aktif Mentör</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">%90</div>
+      <div class="stat-label">Farkındalık Artışı</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">%82</div>
+      <div class="stat-label">Yeni İş Fırsatı</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CAREERS SLIDER ═══════════ -->
+<section class="careers-section fade-section">
+  <div class="careers-header">
+    <h2>Katılım ve İş Birliği Çağrıları</h2>
+    <div class="careers-arrows">
+      <button id="career-left" aria-label="Sola kaydır"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+      <button id="career-right" aria-label="Sağa kaydır"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="careers-track" id="careers-track">
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Kulüp İlişkileri Yöneticisi</h3>
+      <p class="career-en">Club Relations Manager</p>
+      <p class="career-desc">Ekosistem içindeki kulüp yapılarının koordinasyonu, üye ilişkilerinin yönetimi ve topluluk bağlılığının güçlendirilmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Ekosistem Paydaş Yöneticisi</h3>
+      <p class="career-en">Ecosystem Stakeholder Manager</p>
+      <p class="career-desc">Kurumsal paydaşlarla ilişkilerin sürdürülmesi, iş birliği fırsatlarının değerlendirilmesi ve ekosistem büyümesinin desteklenmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>İçerik Üreticisi</h3>
+      <p class="career-en">Content Creator</p>
+      <p class="career-desc">Marka ekosisteminin entelektüel sermayesini oluşturan içeriklerin üretimi, editoryal süreçlerin yönetimi ve yayın takviminin planlanması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Etkinlik Koordinatörü</h3>
+      <p class="career-en">Event Coordinator</p>
+      <p class="career-desc">Ekosistem etkinliklerinin planlanması, lojistik süreçlerin yönetimi ve katılımcı deneyiminin en üst düzeyde tutulması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Global İşbirlikleri Yöneticisi</h3>
+      <p class="career-en">Global Partnerships Manager</p>
+      <p class="career-desc">Uluslararası kurum ve ağlarla iş birliği köprülerinin kurulması, küresel ortaklık fırsatlarının değerlendirilmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Dijital Büyüme Uzmanı</h3>
+      <p class="career-en">Digital Growth Specialist</p>
+      <p class="career-desc">Dijital kanallar üzerinden ekosistem bilinirliğinin artırılması, veri odaklı büyüme modellerinin geliştirilmesi ve uygulanması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section-cta">
+  <div class="cta-inner">
+    <h2>Ekosisteme katılın. <span class="muted">Stratejik marka yolculuğunuza başlayın.</span></h2>
+    <a href="../iletisim.html" class="btn-primary">
+      <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      Başvuru Yapın
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="../brand-initiative/" class="footer-logo"><img src="../mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+      <p class="footer-desc">Strateji odaklı profesyonel marka ekosistemi. Vizyoner markaların ve liderlerin yer aldığı kurum ve düşünce ağı.</p>
+      <p class="footer-quote">"Markalaşmayı yeniden düşün."</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Haftalık bültenimize katılın</h4>
+      <form class="newsletter-input" id="newsletter-form">
+        <span class="mail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="submit-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="newsletter-terms">Abone olarak kullanım koşullarını kabul ediyorsunuz.</p>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div>
+      <div class="col-title">Kurumsal</div>
+      <ul>
+        <li><a href="../brand-initiative/">Anasayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="../uyelik-firsatlari.html">Üyelik Fırsatları</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Kaynaklar</div>
+      <ul>
+        <li><a href="../kutuphane.html">Mİ Kütüphanesi</a></li>
+        <li><a href="../mi-lab.html">Mİ Lab</a></li>
+        <li><a href="../iletisim.html">İletişim</a></li>
+        <li><a href="../kampus-temsilciligi.html">Kampüs Temsilciliği</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Ekosistem</div>
+      <ul>
+        <li><a href="../brand-initiative/">Ekosistem Üyeleri</a></li>
+        <li><a href="../brand-initiative/">Avantajlar</a></li>
+        <li><a href="../brand-initiative/">Başvuru</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Sosyal</div>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a></li>
+        <li><a href="https://x.com/markainisiyatif" target="_blank">X (Twitter)</a></li>
+        <li><a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a></li>
+        <li><a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="copyright">© 2026 Marka İnisiyatifi. Tüm hakları saklıdır.</span>
+    <div class="legal-links">
+      <a href="../brand-initiative/">Gizlilik Politikası</a>
+      <a href="../brand-initiative/">Kullanım Koşulları</a>
+      <a href="../brand-initiative/">KVKK</a>
+    </div>
+    <span class="footer-powered">Powered by <a href="https://toganworks.com" target="_blank">Toganworks</a></span>
+  </div>
+</footer>
+
+<script>
+/* ── Scroll Reveal ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+/* ── Mobile Menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+/* ── Careers Slider ── */
+const careersTrack = document.getElementById('careers-track');
+const careerLeft = document.getElementById('career-left');
+const careerRight = document.getElementById('career-right');
+if (careersTrack && careerLeft && careerRight) {
+  const scrollAmt = 370;
+  careerLeft.addEventListener('click', () => careersTrack.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
+  careerRight.addEventListener('click', () => careersTrack.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
+}
+
+/* ── Newsletter ── */
+const form = document.getElementById('newsletter-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const email = input?.value?.trim();
+    if (!email) return;
+    try {
+      window.location.href = 'mailto:info@markainisiyatifi.com?subject=Bülten Aboneliği&body=Bülten abonelik talebim: ' + encodeURIComponent(email);
+      input.value = ''; input.placeholder = 'Başarılı!'; setTimeout(() => { input.placeholder = 'E-posta adresiniz'; }, 2500);
+    } catch (err) { console.error(err); }
+  });
+}
+</script>
+</body>
+</html>

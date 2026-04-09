@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Kampüs Temsilciliği | Marka İnisiyatifi</title>
+<meta name="description" content="Marka İnisiyatifi Kampüs Temsilciliği — akademik dünya ile iş dünyası arasında köprü kuran, etkileşim odaklı bir Marka Elçiliği projesi.">
+<link rel="canonical" href="https://markainisiyatifi.com/kampus-temsilciligi.html">
+<meta property="og:title" content="Kampüs Temsilciliği | Marka İnisiyatifi">
+<meta property="og:description" content="Kariyer yolculuğunuza bugün kampüste başlayın.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markainisiyatifi.com/kampus-temsilciligi.html">
+<meta property="og:image" content="https://markainisiyatifi.com/mis.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="keywords" content="kampüs temsilciliği, marka inisiyatifi kampüs, üniversite marka elçisi, kariyer fırsatları öğrenci">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kampüs Temsilciliği | Marka İnisiyatifi">
+<meta name="twitter:description" content="Akademik dünya ile iş dünyası arasında köprü kuran Marka Elçiliği projesi.">
+<meta name="twitter:image" content="https://markainisiyatifi.com/mis.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --font-primary: 'Manrope', Arial, sans-serif;
+    --bg: #121212;
+    --bg-light: #f5f5f0;
+    --white: #ffffff;
+    --brand: #e12401;
+    --light-faded: rgba(255,255,255,0.12);
+    --dark-grey-1: #1a1a1a;
+    --dark-grey-2: #202020;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dark: #121212;
+    --text-dark-muted: rgba(18,18,18,0.45);
+    --border-light: rgba(18,18,18,0.08);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ══════════ NAVBAR ══════════ */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; border-bottom: 1px solid var(--light-faded); position: sticky; top: 0; z-index: 100; background: rgba(18,18,18,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+  .logo-img { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: #000; object-fit: cover; }
+  .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+  .dropdown-group { position: relative; }
+  .dropdown-btn { display: flex; align-items: center; gap: 4px; color: var(--text-muted); font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: none; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: color 0.2s, background 0.2s; }
+  .dropdown-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .dropdown-btn svg { width: 13px; height: 13px; }
+  .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); min-width: 200px; background: rgba(14,14,18,0.97); border: 1px solid var(--light-faded); border-radius: 12px; padding: 6px; padding-top: 16px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; backdrop-filter: blur(20px); z-index: 100; }
+  .dropdown-group:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown-menu a { display: block; padding: 9px 14px; font-size: 13px; color: rgba(255,255,255,0.5); border-radius: 8px; transition: background 0.15s, color 0.15s; text-decoration: none; white-space: nowrap; font-weight: 500; }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+  .nav-links > li > a { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s, background 0.2s; padding: 8px 14px; border-radius: 8px; }
+  .nav-links > li > a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .powered-header { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+  .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .powered-header a:hover { color: var(--white); }
+  .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .btn-demo { display: inline-flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; background: transparent; padding: 4px 18px 4px 4px; border-radius: 100vw; border: 1px solid var(--light-faded); transition: all 0.3s; }
+  .btn-demo:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-demo .arrow-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .btn-demo .arrow-circle svg { width: 12px; height: 12px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; width: 42px; height: 42px; background: rgba(255,255,255,0.05); border: 1px solid var(--light-faded); border-radius: 10px; cursor: pointer; gap: 5px; z-index: 1001; }
+  .hamburger span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+  .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .mobile-menu { position: fixed; inset: 0; z-index: 999; background: rgba(12,12,14,0.98); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a { font-size: 1.35rem; font-weight: 600; color: rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--brand); }
+  .mobile-menu .mob-cta { margin-top: 20px; background: var(--brand); color: var(--white); padding: 14px 36px; border-radius: 100vw; font-size: 14px; font-weight: 700; }
+
+  /* ══════════ HERO (Amini About Style) ══════════ */
+  .page-hero {
+    position: relative;
+    padding: clamp(100px, 12vw, 180px) 48px clamp(60px, 8vw, 100px);
+    overflow: hidden;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+  .hero-tag { font-size: 13px; font-weight: 700; color: var(--brand); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+  .page-hero h1 {
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .hero-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 640px;
+  }
+
+  /* ══════════ STATS ══════════ */
+  .stats-section {
+    padding: clamp(48px, 6vw, 80px) 48px;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    padding: 28px 32px;
+    border-left: 3px solid var(--brand);
+  }
+  .stat-num {
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 52px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ══════════ MISSION (centered) ══════════ */
+  .mission-section {
+    padding: clamp(64px, 8vw, 120px) 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .mission-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .mission-text {
+    font-weight: 500;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ══════════ CAPABILITIES (light bg) ══════════ */
+  .capabilities-section {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: clamp(64px, 8vw, 100px) 48px;
+  }
+  .cap-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(22px, 2.5vw, 32px);
+    letter-spacing: -0.01em;
+    margin-bottom: 48px;
+  }
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .cap-card {
+    padding: 48px 32px;
+    text-align: center;
+    border-right: 1px solid var(--border-light);
+  }
+  .cap-card:last-child { border-right: none; }
+  .cap-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cap-icon svg { width: 32px; height: 32px; stroke: var(--brand); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .cap-card h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+  }
+  .cap-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    line-height: 1.65;
+  }
+  .cap-footer {
+    text-align: center;
+    font-weight: 500;
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--text-dark);
+    line-height: 1.55;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+  }
+
+  /* ══════════ BENEFITS ══════════ */
+  .benefits-section {
+    padding: clamp(64px, 8vw, 100px) 48px;
+    border-bottom: 1px solid var(--light-faded);
+  }
+  .benefits-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .benefits-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 40px);
+    letter-spacing: -0.02em;
+    margin-bottom: 56px;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .benefit-card {
+    background: var(--dark-grey-2);
+    border: 1px solid var(--light-faded);
+    border-radius: 16px;
+    padding: 36px 32px;
+  }
+  .benefit-card h3 {
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .benefit-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ══════════ CTA ══════════ */
+  .section-cta {
+    padding: clamp(48px, 6vw, 80px) 48px;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-top: 1px solid var(--light-faded);
+    border-bottom: 1px solid var(--light-faded);
+    padding: clamp(40px, 5vw, 64px) 0;
+  }
+  .cta-inner h2 {
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    max-width: 600px;
+  }
+  .cta-inner h2 .muted { color: var(--text-muted); }
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid var(--light-faded);
+    padding: 5px 28px 5px 5px;
+    border-radius: 100vw;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .btn-primary:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); }
+  .btn-primary .arrow-circle {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--brand);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .btn-primary .arrow-circle svg {
+    width: 16px; height: 16px; fill: none;
+    stroke: var(--white); stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ══════════ FOOTER ══════════ */
+  .footer { background: var(--bg); color: var(--white); padding: 0 48px; }
+  .footer-top { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; padding: clamp(48px, 6vw, 80px) 0; }
+  .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 16px; }
+  .footer-brand .footer-logo .logo-img { width: 32px; height: 32px; }
+  .footer-brand .footer-desc { font-weight: 400; font-size: 14px; color: var(--text-muted); line-height: 1.65; max-width: 340px; }
+  .footer-brand .footer-quote { font-style: italic; font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+  .footer-newsletter h4 { font-weight: 600; font-size: 15px; margin-bottom: 14px; color: var(--white); }
+  .newsletter-input { display: flex; align-items: center; background: var(--dark-grey-2); border: 1px solid var(--light-faded); border-radius: 100vw; padding: 5px; }
+  .newsletter-input .mail-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; flex-shrink: 0; }
+  .newsletter-input .mail-icon svg { width: 18px; height: 18px; fill: none; stroke: var(--text-muted); stroke-width: 1.5; }
+  .newsletter-input input { flex: 1; background: transparent; border: none; outline: none; font-family: var(--font-primary); font-size: 13px; color: var(--white); padding: 0 8px; }
+  .newsletter-input input::placeholder { color: var(--text-muted); }
+  .newsletter-input .submit-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .newsletter-input .submit-btn:hover { background: var(--brand); }
+  .newsletter-input .submit-btn svg { width: 16px; height: 16px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .newsletter-terms { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 12px; }
+  .footer-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--light-faded); }
+  .footer-links .col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links ul a { font-size: 13px; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-links ul a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; border-top: 1px solid var(--light-faded); }
+  .footer-bottom .copyright { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+  .footer-bottom .legal-links { display: flex; gap: 28px; }
+  .footer-bottom .legal-links a { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-bottom .legal-links a:hover { color: var(--white); }
+  .footer-powered { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .footer-powered a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-powered a:hover { color: var(--white); }
+
+  /* ══════════ FADE ══════════ */
+  .fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+  /* ══════════ RESPONSIVE ══════════ */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .powered-header { display: none; }
+    .page-hero { padding: 80px 20px 48px; }
+    .stats-section { padding: 40px 20px; }
+    .stats-row { grid-template-columns: 1fr; gap: 0; }
+    .mission-section { padding: 48px 20px; }
+    .capabilities-section { padding: 48px 20px; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .cap-card { border-right: none; border-bottom: 1px solid var(--border-light); }
+    .cap-card:last-child { border-bottom: none; }
+    .benefits-section { padding: 48px 20px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .section-cta { padding: 40px 20px; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .footer { padding: 0 20px; }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav>
+  <div class="nav-left">
+    <a href="brand-initiative/" class="logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="brand-initiative/">Anasayfa</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">Kurumsal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="kurumsal/hakkimizda.html">Hakkımızda</a><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></div></li>
+      <li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">İletişim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="iletisim.html">İletişim</a><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></div></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Powered by <a href="https://toganworks.com" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Toganworks</a></span>
+    <a href="iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="brand-initiative/">Anasayfa</a>
+  <a href="kurumsal/hakkimizda.html">Hakkımızda</a>
+  <a href="uyelik-firsatlari.html">Üyelik Fırsatları</a>
+  <a href="kutuphane.html">Mİ Kütüphanesi</a>
+  <a href="mi-lab.html">Mİ Lab</a>
+  <a href="iletisim.html">İletişim</a>
+  <a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a>
+  <a href="iletisim.html" class="mob-cta">İnisiyatife Katılın</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="page-hero">
+  <div class="hero-content">
+    <p class="hero-tag">Kampüs Temsilciliği</p>
+    <h1>Kariyer Yolculuğunuza Bugün <span style="font-weight:300">Kampüste Başlayın</span></h1>
+    <p class="hero-desc">Marka İnisiyatifi Kampüs Temsilciliği, akademik dünya ile iş dünyası arasında köprü kuran, etkileşim odaklı bir Marka Elçiliği projesidir. Bu inisiyatif; ekip ruhunu, gönüllülüğü ve kolektif başarıyı esas alarak, üniversite öğrencilerini geleceğe hazırlayan dinamik bir topluluktur.</p>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<section class="stats-section fade-section">
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Kampüs Temsilcisi — Üniversitedeki stratejik lider ve ana iletişim kişisi</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Temsilci Yardımcısı — Operasyonel süreçlerin yönetimindeki sağ kol</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Yönetim Kurulu Üyesi — Proje geliştirme ve uygulama ekibi</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MISSION ═══════════ -->
+<section class="mission-section fade-section">
+  <p class="mission-tag">Temsilcilik Yapısı</p>
+  <h2 class="mission-text">Her üniversitede vizyonumuzu kampüse taşıyan ve projelere liderlik eden çekirdek bir kadro yer alır.</h2>
+</section>
+
+<!-- ═══════════ CAPABILITIES (Görev ve Sorumluluklar) ══════════ -->
+<section class="capabilities-section fade-section">
+  <h2 class="cap-title">Görev ve Sorumluluklar</h2>
+  <div class="cap-grid">
+    <div class="cap-card">
+      <div class="cap-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h3>Organizasyon</h3>
+      <p>Zirveler, etkinlikler ve atölye çalışmalarının kampüs özelinde yönetimi.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div>
+      <h3>Tanıtım & Duyurum</h3>
+      <p>Projelerin kampüs ağında ve dijital mecralarda etkili şekilde yaygınlaştırılması.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <h3>Marka Elçiliği</h3>
+      <p>Marka vizyonunun akademik ve sosyal çevrelerde profesyonel temsili.</p>
+    </div>
+  </div>
+  <div class="cap-footer">
+    Kampüs temsilcilerimiz, Marka İnisiyatifi'nin yereldeki yüzü olarak projelere hayat verir; tanıtım ve organizasyon süreçlerini yönetirler.
+  </div>
+</section>
+
+<!-- ═══════════ BENEFITS ═══════════ -->
+<section class="benefits-section fade-section">
+  <p class="benefits-tag">Neden Katılmalısın?</p>
+  <h2 class="benefits-title">Bu program bir üniversite öğrencisinin CV'sinde daima parlayan bir artı değerdir.</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h3>İş Dünyasına Adım Atın</h3>
+      <p>Henüz öğrenciyken profesyonel çevrelerin ve büyük projelerin bir parçası olun.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Stratejik Bağlantılar Kurun</h3>
+      <p>Sektörün öncü isimleri, uzmanlar ve farklı üniversitelerden vizyon sahibi lider adaylarıyla bir araya gelin.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>CV Referansı</h3>
+      <p>Marka elçiliği deneyimiyle, mezuniyet sonrası iş başvurularında rakiplerinizin önüne geçin.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Yetenek Gelişimi</h3>
+      <p>Liderlik, organizasyon ve stratejik iletişim becerilerinizi sahada geliştirerek profesyonelliğe başlayın.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section-cta">
+  <div class="cta-inner">
+    <h2><span class="muted">Kampüs temsilcisi olmak,</span> profesyonel hayata atılan en güçlü ilk adımınız olabilir.</h2>
+    <a href="iletisim.html" class="btn-primary"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Başvuru Yapın</a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="brand-initiative/" class="footer-logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+      <p class="footer-desc">Strateji odaklı profesyonel marka ekosistemi. Vizyoner markaların ve liderlerin yer aldığı kurum ve düşünce ağı.</p>
+      <p class="footer-quote">"Markalaşmayı yeniden düşün."</p>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Haftalık bültenimize katılın</h4>
+      <form class="newsletter-input" id="newsletter-form">
+        <span class="mail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="submit-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="newsletter-terms">Abone olarak kullanım koşullarını kabul ediyorsunuz.</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div><div class="col-title">Kurumsal</div><ul><li><a href="brand-initiative/">Anasayfa</a></li><li><a href="kurumsal/hakkimizda.html">Hakkımızda</a></li><li><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></li></ul></div>
+    <div><div class="col-title">Kaynaklar</div><ul><li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li><li><a href="iletisim.html">İletişim</a></li><li><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></li></ul></div>
+    <div><div class="col-title">Ekosistem</div><ul><li><a href="brand-initiative/">Ekosistem Üyeleri</a></li><li><a href="brand-initiative/">Avantajlar</a></li><li><a href="brand-initiative/">Başvuru</a></li></ul></div>
+    <div><div class="col-title">Sosyal</div><ul><li><a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a></li><li><a href="https://x.com/markainisiyatif" target="_blank">X (Twitter)</a></li><li><a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a></li><li><a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">© 2026 Marka İnisiyatifi. Tüm hakları saklıdır.</span>
+    <div class="legal-links"><a href="brand-initiative/">Gizlilik Politikası</a><a href="brand-initiative/">Kullanım Koşulları</a><a href="brand-initiative/">KVKK</a></div><p class="font-manrope text-gray-700">Powered by <a href="https://toganworks.com" target="_blank" class="hover:text-gray-900">Toganworks</a></p>
+    
+  </div>
+</footer>
+
+<script>
+/* ── Scroll Reveal ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+/* ── Mobile Menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+/* ── Newsletter ── */
+const form = document.getElementById('newsletter-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const email = input?.value?.trim();
+    if (!email) return;
+    try {
+      window.location.href = 'mailto:info@markainisiyatifi.com?subject=Bülten Aboneliği&body=Bülten abonelik talebim: ' + encodeURIComponent(email);
+      input.value = '';
+      alert('Bültenimize kaydınız alındı!');
+    } catch { alert('Bir hata oluştu, lütfen tekrar deneyin.'); }
+  });
+}
+</script>
+</body>
+</html>

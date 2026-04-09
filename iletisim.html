@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>İletişim | Marka İnisiyatifi</title>
+<meta name="description" content="Marka İnisiyatifi ile iletişime geçin. Sorularınız, işbirliği önerileriniz ve başvurularınız için bize ulaşın.">
+<link rel="canonical" href="https://markainisiyatifi.com/iletisim.html">
+<meta property="og:title" content="İletişim | Marka İnisiyatifi">
+<meta property="og:description" content="Marka İnisiyatifi ile iletişime geçin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markainisiyatifi.com/iletisim.html">
+<meta property="og:image" content="https://markainisiyatifi.com/mis.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="keywords" content="marka inisiyatifi iletişim, iletişim formu, marka danışmanlığı, stratejik iletişim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="İletişim | Marka İnisiyatifi">
+<meta name="twitter:description" content="Marka İnisiyatifi ile iletişime geçin. Sorularınız, işbirliği önerileriniz ve başvurularınız için bize ulaşın.">
+<meta name="twitter:image" content="https://markainisiyatifi.com/mis.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --font-primary: 'Manrope', Arial, sans-serif;
+    --bg: #121212;
+    --bg-light: #f5f5f0;
+    --white: #ffffff;
+    --brand: #e12401;
+    --light-faded: rgba(255,255,255,0.12);
+    --dark-grey-1: #1a1a1a;
+    --dark-grey-2: #202020;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dark: #121212;
+    --text-dark-muted: rgba(18,18,18,0.45);
+    --border-light: rgba(18,18,18,0.08);
+  }
+
+  body {
+    background: var(--white);
+    color: var(--text-dark);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ══════════════════════════════════════════
+     NAVBAR (Dark)
+  ══════════════════════════════════════════ */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    border-bottom: 1px solid var(--light-faded);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(18,18,18,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #000;
+    object-fit: cover;
+  }
+
+  .logo-text {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .logo-text .dot { color: var(--brand); }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .dropdown-group { position: relative; }
+
+  .dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+  }
+  .dropdown-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .dropdown-btn svg { width: 13px; height: 13px; }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    min-width: 200px;
+    background: rgba(14,14,18,0.97);
+    border: 1px solid var(--light-faded);
+    border-radius: 12px;
+    padding: 6px;
+    padding-top: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+
+  .dropdown-group:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+
+  .nav-links > li > a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s, background 0.2s;
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+  .nav-links > li > a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+
+  .powered-header { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+  .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .powered-header a:hover { color: var(--white); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background: transparent;
+    padding: 4px 18px 4px 4px;
+    border-radius: 100vw;
+    border: 1px solid var(--light-faded);
+    transition: all 0.3s;
+  }
+  .btn-demo:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); transform: translateY(-1px); }
+  .btn-demo .arrow-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--brand);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .btn-demo .arrow-circle svg {
+    width: 12px; height: 12px; fill: none;
+    stroke: var(--white); stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--light-faded);
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+  }
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(12,12,14,0.98);
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--brand); }
+  .mobile-menu .mob-cta {
+    margin-top: 20px;
+    background: var(--brand);
+    color: var(--white);
+    padding: 14px 36px;
+    border-radius: 100vw;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════════
+     PAGE HERO (White)
+  ══════════════════════════════════════════ */
+  .page-hero {
+    padding: clamp(80px, 10vw, 140px) 48px clamp(48px, 6vw, 80px);
+    text-align: center;
+    background: var(--white);
+  }
+
+  .page-hero .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 6px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background: rgba(18,18,18,0.02);
+  }
+
+  .page-hero .tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+
+  .page-hero h1 {
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .page-hero h1 .muted {
+    color: rgba(18,18,18,0.3);
+  }
+
+  .page-hero .intro {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark-muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ══════════════════════════════════════════
+     CONTACT CONTENT (White)
+  ══════════════════════════════════════════ */
+  .contact-section {
+    padding: 0 48px clamp(80px, 10vw, 140px);
+    background: var(--white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Form */
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+  .form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(18,18,18,0.02);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    color: var(--text-dark);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--text-dark);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(18,18,18,0.3);
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(18,18,18,0.4)' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  .form-group textarea {
+    resize: none;
+    min-height: 140px;
+  }
+
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--text-dark);
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+  .btn-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  .btn-submit svg {
+    width: 14px; height: 14px; fill: none;
+    stroke: var(--white); stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* Info Cards */
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+
+  .info-card {
+    background: rgba(18,18,18,0.02);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 24px;
+    transition: border-color 0.3s;
+  }
+  .info-card:hover { border-color: rgba(18,18,18,0.15); }
+
+  .info-card .info-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(18,18,18,0.04);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .info-card .info-icon svg {
+    width: 16px; height: 16px; fill: none;
+    stroke: var(--text-dark); stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .info-card h3 {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .info-card p {
+    font-size: 13px;
+    color: var(--text-dark-muted);
+    line-height: 1.5;
+  }
+
+  .info-card a {
+    font-size: 13px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .info-card a:hover { color: var(--brand); }
+
+  .social-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .social-links a {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 100vw;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s;
+  }
+  .social-links a:hover {
+    background: var(--text-dark);
+    color: var(--white);
+    border-color: var(--text-dark);
+  }
+
+  /* ══════════════════════════════════════════
+     CAREERS SLIDER
+  ══════════════════════════════════════════ */
+  .careers-section {
+    padding: clamp(64px, 8vw, 100px) 0 clamp(64px, 8vw, 100px) 48px;
+    background: var(--bg);
+    color: var(--white);
+  }
+  .careers-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-right: 48px;
+  }
+  .careers-header h2 {
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: -0.02em;
+  }
+  .careers-arrows {
+    display: flex;
+    gap: 12px;
+  }
+  .careers-arrows button {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--light-faded); background: transparent;
+    color: var(--white); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .careers-arrows button:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .careers-arrows button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .careers-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-right: 48px;
+  }
+  .careers-track::-webkit-scrollbar { display: none; }
+  .career-card {
+    min-width: 340px;
+    max-width: 340px;
+    background: var(--dark-grey-2);
+    border: 1px solid var(--light-faded);
+    border-radius: 16px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .career-card:hover { border-color: rgba(255,255,255,0.25); }
+  .career-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--brand);
+    background: rgba(225,36,1,0.1);
+    padding: 5px 12px;
+    border-radius: 100vw;
+    width: fit-content;
+  }
+  .career-card h3 {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--white);
+  }
+  .career-en {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .career-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .career-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 4px;
+  }
+  .career-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  @media (max-width: 768px) {
+    .careers-section { padding-left: 20px; }
+    .careers-header { padding-right: 20px; }
+    .careers-track { padding-right: 20px; }
+    .career-card { min-width: 280px; max-width: 280px; }
+  }
+
+  /* ══════════════════════════════════════════
+     FOOTER (Dark)
+  ══════════════════════════════════════════ */
+  .footer {
+    background: var(--bg);
+    color: var(--white);
+    padding: 0 48px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    padding: clamp(48px, 6vw, 80px) 0;
+  }
+
+  .footer-brand .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .footer-brand .footer-logo .logo-img { width: 32px; height: 32px; }
+  .footer-brand .footer-logo .fl-text { font-weight: 700; font-size: 14px; color: var(--white); }
+  .footer-brand .footer-logo .fl-dot { color: var(--brand); }
+
+  .footer-brand .footer-desc {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 340px;
+  }
+
+  .footer-brand .footer-quote {
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 12px;
+  }
+
+  .footer-newsletter h4 { font-weight: 600; font-size: 15px; margin-bottom: 14px; color: var(--white); }
+
+  .newsletter-input {
+    display: flex;
+    align-items: center;
+    background: var(--dark-grey-2);
+    border: 1px solid var(--light-faded);
+    border-radius: 100vw;
+    padding: 4px 4px 4px 16px;
+    max-width: 400px;
+  }
+
+  .newsletter-input .mail-icon { color: var(--text-muted); margin-right: 10px; flex-shrink: 0; }
+  .newsletter-input .mail-icon svg {
+    width: 18px; height: 18px; fill: none;
+    stroke: currentColor; stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .newsletter-input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  .newsletter-input input::placeholder { color: var(--text-muted); }
+
+  .newsletter-input .submit-btn {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0;
+    transition: background 0.3s;
+  }
+  .newsletter-input .submit-btn:hover { background: rgba(255,255,255,0.2); }
+  .newsletter-input .submit-btn svg {
+    width: 16px; height: 16px; fill: none;
+    stroke: var(--white); stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .newsletter-terms {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: clamp(40px, 5vw, 64px) 0;
+    border-top: 1px solid var(--light-faded);
+  }
+
+  .footer-links .col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links ul a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px solid var(--light-faded);
+  }
+
+  .footer-bottom .copyright {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .footer-bottom .legal-links { display: flex; gap: 28px; }
+  .footer-bottom .legal-links a {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-bottom .legal-links a:hover { color: var(--white); }
+
+  .footer-powered {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .footer-powered a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-powered a:hover { color: var(--white); }
+
+  /* ── ANIMATIONS ── */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .page-hero { padding: 64px 20px 48px; }
+    .contact-section { padding: 0 20px 64px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer { padding: 0 20px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav>
+  <div class="nav-left">
+    <a href="brand-initiative/" class="logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="brand-initiative/">Anasayfa</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">Kurumsal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="kurumsal/hakkimizda.html">Hakkımızda</a><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></div></li>
+      <li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li>
+      <li class="dropdown-group"><button class="dropdown-btn">İletişim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="dropdown-menu"><a href="iletisim.html">İletişim</a><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></div></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Powered by <a href="https://toganworks.com" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Toganworks</a></span>
+    <a href="iletisim.html" class="btn-demo"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="brand-initiative/">Anasayfa</a>
+  <a href="kurumsal/hakkimizda.html">Hakkımızda</a>
+  <a href="uyelik-firsatlari.html">Üyelik Fırsatları</a>
+  <a href="kutuphane.html">Mİ Kütüphanesi</a>
+  <a href="mi-lab.html">Mİ Lab</a>
+  <a href="iletisim.html">İletişim</a>
+  <a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a>
+  <a href="iletisim.html" class="mob-cta">İnisiyatife Katılın</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="page-hero">
+  <div class="tag"><span class="tag-dot"></span> İletişim</div>
+  <h1>Ekosisteme <span class="muted" style="font-weight:300">katılın.</span></h1>
+  <p class="intro">Sorularınız, işbirliği önerileriniz veya başvurularınız için bize ulaşın. En kısa sürede geri dönüş sağlıyoruz.</p>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact-section fade-section">
+  <div class="contact-grid">
+
+    <!-- Form -->
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ad Soyad</label>
+          <input type="text" name="name" required placeholder="Adınız Soyadınız">
+        </div>
+        <div class="form-group">
+          <label>E-posta</label>
+          <input type="email" name="email" required placeholder="ornek@sirket.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Konu</label>
+        <select name="subject">
+          <option value="">Seçiniz...</option>
+          <option>Genel Bilgi</option>
+          <option>Üyelik Başvurusu</option>
+          <option>İş Birliği Önerisi</option>
+          <option>Medya &amp; Basın</option>
+          <option>Teknik Destek</option>
+          <option>Diğer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mesajınız</label>
+        <textarea name="message" rows="5" required placeholder="Mesajınızı buraya yazın..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">
+        Mesajı Gönderin
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+
+    <!-- Info -->
+    <div class="contact-info">
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>E-posta</h3>
+        <a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Konum</h3>
+        <p>İstanbul, Türkiye</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <h3>Sosyal Medya</h3>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a>
+          <a href="https://x.com/markainisiyatif" target="_blank">X</a>
+          <a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Yanıt Süresi</h3>
+        <p>İş günlerinde 24 saat içinde geri dönüş sağlıyoruz.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CAREERS SLIDER ═══════════ -->
+<section class="careers-section fade-section">
+  <div class="careers-header">
+    <h2>Katılım ve İş Birliği Çağrıları</h2>
+    <div class="careers-arrows">
+      <button id="career-left" aria-label="Sola kaydır"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+      <button id="career-right" aria-label="Sağa kaydır"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="careers-track" id="careers-track">
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Kulüp İlişkileri Yöneticisi</h3>
+      <p class="career-en">Club Relations Manager</p>
+      <p class="career-desc">Ekosistem içindeki kulüp yapılarının koordinasyonu, üye ilişkilerinin yönetimi ve topluluk bağlılığının güçlendirilmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Ekosistem Paydaş Yöneticisi</h3>
+      <p class="career-en">Ecosystem Stakeholder Manager</p>
+      <p class="career-desc">Kurumsal paydaşlarla ilişkilerin sürdürülmesi, iş birliği fırsatlarının değerlendirilmesi ve ekosistem büyümesinin desteklenmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>İçerik Üreticisi</h3>
+      <p class="career-en">Content Creator</p>
+      <p class="career-desc">Marka ekosisteminin entelektüel sermayesini oluşturan içeriklerin üretimi, editoryal süreçlerin yönetimi ve yayın takviminin planlanması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Etkinlik Koordinatörü</h3>
+      <p class="career-en">Event Coordinator</p>
+      <p class="career-desc">Ekosistem etkinliklerinin planlanması, lojistik süreçlerin yönetimi ve katılımcı deneyiminin en üst düzeyde tutulması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Global İşbirlikleri Yöneticisi</h3>
+      <p class="career-en">Global Partnerships Manager</p>
+      <p class="career-desc">Uluslararası kurum ve ağlarla iş birliği köprülerinin kurulması, küresel ortaklık fırsatlarının değerlendirilmesi.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Açık Pozisyon</span>
+      <h3>Dijital Büyüme Uzmanı</h3>
+      <p class="career-en">Digital Growth Specialist</p>
+      <p class="career-desc">Dijital kanallar üzerinden ekosistem bilinirliğinin artırılması, veri odaklı büyüme modellerinin geliştirilmesi ve uygulanması.</p>
+      <span class="career-link">Detayları İncele <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="brand-initiative/" class="footer-logo"><img src="mis.png" alt="Marka İnisiyatifi" class="logo-img"></a>
+      <p class="footer-desc">Strateji odaklı profesyonel marka ekosistemi. Vizyoner markaların ve liderlerin yer aldığı kurum ve düşünce ağı.</p>
+      <p class="footer-quote">"Markalaşmayı yeniden düşün."</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Haftalık bültenimize katılın</h4>
+      <form class="newsletter-input" id="newsletter-form">
+        <span class="mail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></span>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="submit-btn"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="newsletter-terms">Abone olarak kullanım koşullarını kabul ediyorsunuz.</p>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div>
+      <div class="col-title">Kurumsal</div>
+      <ul>
+        <li><a href="brand-initiative/">Anasayfa</a></li>
+        <li><a href="kurumsal/hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="uyelik-firsatlari.html">Üyelik Fırsatları</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Kaynaklar</div>
+      <ul>
+        <li><a href="kutuphane.html">Mİ Kütüphanesi</a></li>
+      <li><a href="mi-lab.html">Mİ Lab</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="kampus-temsilciligi.html">Kampüs Temsilciliği</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Ekosistem</div>
+      <ul>
+        <li><a href="brand-initiative/">Ekosistem Üyeleri</a></li>
+        <li><a href="brand-initiative/">Avantajlar</a></li>
+        <li><a href="brand-initiative/">Başvuru</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">Sosyal</div>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/markainisiyatifi" target="_blank">LinkedIn</a></li>
+        <li><a href="https://x.com/markainisiyatif" target="_blank">X (Twitter)</a></li>
+        <li><a href="https://www.instagram.com/markainisiyatifi/" target="_blank">Instagram</a></li>
+        <li><a href="mailto:info@markainisiyatifi.com">info@markainisiyatifi.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="copyright">© 2026 Marka İnisiyatifi. Tüm hakları saklıdır.</span>
+    <div class="legal-links">
+      <a href="brand-initiative/">Gizlilik Politikası</a>
+      <a href="brand-initiative/">Kullanım Koşulları</a>
+      <a href="brand-initiative/">KVKK</a>
+    </div>
+    <span class="footer-powered">Powered by <a href="https://toganworks.com" target="_blank">Toganworks</a></span>
+  </div>
+</footer>
+
+<script>
+/* ── Scroll Reveal ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+/* ── Mobile Menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+/* ── Careers Slider ── */
+const careersTrack = document.getElementById('careers-track');
+const careerLeft = document.getElementById('career-left');
+const careerRight = document.getElementById('career-right');
+if (careersTrack && careerLeft && careerRight) {
+  const scrollAmt = 370;
+  careerLeft.addEventListener('click', () => careersTrack.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
+  careerRight.addEventListener('click', () => careersTrack.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
+}
+
+/* ── Contact Form ── */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = contactForm.querySelector('input[name="name"]').value;
+    const email = contactForm.querySelector('input[name="email"]').value;
+    const subject = contactForm.querySelector('select[name="subject"]').value || 'Genel';
+    const message = contactForm.querySelector('textarea[name="message"]').value;
+    const body = 'Ad Soyad: ' + name + '\nE-posta: ' + email + '\nKonu: ' + subject + '\n\nMesaj:\n' + message;
+    window.location.href = 'mailto:info@markainisiyatifi.com?subject=' + encodeURIComponent('İletişim: ' + subject) + '&body=' + encodeURIComponent(body);
+  });
+}
+
+/* ── Newsletter ── */
+const form = document.getElementById('newsletter-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const email = input?.value?.trim();
+    if (!email) return;
+    try {
+      window.location.href = 'mailto:info@markainisiyatifi.com?subject=Bülten Aboneliği&body=Bülten abonelik talebim: ' + encodeURIComponent(email);
+      input.value = ''; input.placeholder = 'Başarılı!'; setTimeout(() => { input.placeholder = 'E-posta adresiniz'; }, 2500);
+    } catch (err) { console.error(err); }
+  });
+}
+</script>
+</body>
+</html>

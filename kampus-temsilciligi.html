@@ -77,11 +77,15 @@
   .hamburger span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
   .hamburger.open span:first-child { transform: translateY(3.5px) rotate(45deg); }
   .hamburger.open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
-  .mobile-menu { position: fixed; inset: 0; z-index: 999; background: rgba(12,12,14,0.98); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+  .mobile-menu { position: fixed; inset: 0; z-index: 999; background: rgba(12,12,14,0.98); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 80px 32px 48px; gap: 4px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
   .mobile-menu.open { opacity: 1; pointer-events: auto; }
-  .mobile-menu a { font-size: 1.35rem; font-weight: 600; color: rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: color 0.2s; }
-  .mobile-menu a:hover { color: var(--brand); }
-  .mobile-menu .mob-cta { margin-top: 20px; background: var(--brand); color: var(--white); padding: 14px 36px; border-radius: 100vw; font-size: 14px; font-weight: 700; }
+  .mobile-menu a { font-size: 1.25rem; font-weight: 600; color: rgba(255,255,255,0.45); padding: 12px 0; text-decoration: none; transition: color 0.2s; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .mobile-menu a:last-of-type:not(.mob-cta) { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--white); }
+  .mobile-menu .mob-cta { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--white); background: transparent; padding: 4px 18px 4px 4px; border-radius: 100vw; border: 1px solid var(--light-faded); width: auto; }
+  .mobile-menu .mob-cta:hover { border-color: var(--brand); background: rgba(225,36,1,0.06); }
+  .mobile-menu .mob-cta .arrow-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .mobile-menu .mob-cta .arrow-circle svg { width: 14px; height: 14px; fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
   /* ══════════ HERO (Amini About Style) ══════════ */
   .page-hero {
@@ -418,7 +422,7 @@
   <a href="mi-lab">Mİ Lab</a>
   <a href="iletisim">İletişim</a>
   <a href="kampus-temsilciligi">Kampüs Temsilciliği</a>
-  <a href="iletisim" class="mob-cta">İnisiyatife Katılın</a>
+  <a href="iletisim" class="mob-cta"><span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>İnisiyatife Katılın</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->

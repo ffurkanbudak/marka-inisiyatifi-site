@@ -202,6 +202,23 @@
   .powered-header a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
   .powered-header a:hover { color: var(--white); }
 
+  /* Value/feature icon - SVG based */
+  .icon-star {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .icon-star svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--brand);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
   .nav-right {
     display: flex;
     align-items: center;
@@ -626,7 +643,7 @@
   }
   .value-item:first-child { border-top: 1px solid var(--light-faded); }
 
-  .value-icon {
+  .value-icon, .feat-icon-legacy {
     color: var(--brand);
     font-size: 18px;
     flex-shrink: 0;
@@ -1280,35 +1297,114 @@
   }
 
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
+    nav { padding: 0 16px; height: 64px; }
     .nav-links { display: none !important; }
     .nav-right .btn-ghost { display: none; }
+    .nav-right .powered-by-mobile { display: none; }
     .hamburger { display: flex; }
 
-    .hero { padding: 0 20px; }
+    /* Hide powered-by in header on mobile */
+    .nav-right > span[style] { display: none !important; }
+
+    /* Logo smaller on mobile */
+    .logo-img { width: 30px; height: 30px; }
+
+    /* Header CTA button smaller */
+    .btn-demo { font-size: 11px; padding: 3px 14px 3px 3px; }
+    .btn-demo .arrow-circle { width: 28px; height: 28px; }
+    .btn-demo .arrow-circle svg { width: 10px; height: 10px; }
+
+    .hero { padding: 0 20px; min-height: calc(100vh - 64px); }
     .hero-content { padding-top: 48px; }
+    .hero h1 { font-size: clamp(32px, 8vw, 48px); }
     .hero-cta { align-items: flex-start; padding-bottom: 48px; }
+    .hero-cta .subtitle { font-size: clamp(15px, 4vw, 20px); }
     .cta-buttons { flex-wrap: wrap; }
+    .btn-primary { font-size: 14px; padding: 4px 22px 4px 4px; }
+    .btn-primary .arrow-circle { width: 40px; height: 40px; }
+    .btn-secondary { font-size: 14px; padding: 14px 22px; }
+
     .press-section { padding: 20px 0 28px; }
-    .section-mission { padding: 64px 20px; }
-    .section-why { padding: 64px 20px; }
-    .awards-grid { grid-template-columns: 1fr 1fr; }
-    .section-community { padding: 64px 20px; }
-    .community-cols { grid-template-columns: 1fr; }
-    .section-research { margin: 0 20px; padding: 40px 24px; }
-    .section-testimonials { padding: 64px 20px; }
-    .section-knowledge { padding: 0 20px 64px; }
+    .marquee-item { font-size: 12px; letter-spacing: 1.5px; gap: 16px; padding: 0 8px; }
+
+    .section-mission { padding: 48px 20px; }
+    .section-mission h2 { font-size: clamp(22px, 5.5vw, 36px); }
+    .bf-logo { width: 130px; }
+    .bf-ref { font-size: 10px; }
+
+    .section-why { padding: 48px 20px; }
+    .section-why-left h2 { font-size: clamp(24px, 5.5vw, 36px); margin-bottom: 32px; }
+    .value-item { padding: 18px 0; gap: 12px; }
+    .value-item h4 { font-size: 15px; }
+    .value-item p { font-size: 13px; }
+    .why-footer-text { font-size: 14px; }
+    .awards-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .award-card { padding: 24px 16px; }
+    .award-card .award-num { font-size: 26px; }
+    .award-card .award-label { font-size: 10px; }
+
+    .section-community { padding: 48px 20px; }
+    .community-heading { font-size: clamp(22px, 5.5vw, 32px); margin-bottom: 32px; }
+    .community-cols { grid-template-columns: 1fr; gap: 24px; }
+    .community-cols p { font-size: 14px; line-height: 1.65; }
+
+    .section-research { margin: 0 16px; padding: 32px 20px; border-radius: 16px; }
+    .section-research h2 { font-size: clamp(20px, 5vw, 32px); margin-bottom: 32px; }
+    .research-feature h4 { font-size: 14px; }
+    .research-feature p { font-size: 13px; }
+
+    .section-testimonials { padding: 48px 20px; }
+    .testimonial-card { padding: 32px 20px; border-radius: 16px; }
+    .testimonial-card .quote { font-size: clamp(14px, 3.5vw, 17px); }
+
+    .section-knowledge { padding: 0 20px 48px; }
     .knowledge-grid { grid-template-columns: 1fr; }
-    .section-cta { padding: 64px 20px; }
+    .knowledge-card { padding: 24px 20px; }
+
+    .section-cta { padding: 48px 20px; }
+    .cta-inner { gap: 32px; }
+    .cta-inner h2 { font-size: clamp(22px, 5.5vw, 32px); }
+    .btn-cta-gold { font-size: 14px; padding: 4px 22px 4px 4px; }
+    .btn-cta-gold .arrow-circle { width: 40px; height: 40px; }
+
     .footer { padding: 0 20px; }
+    .footer-top { padding: 40px 0; }
+    .footer-newsletter h4 { font-size: 14px; }
+    .newsletter-input { max-width: 100%; }
     .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
     .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
     .footer-bottom .legal-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .footer-watermark { height: clamp(60px, 12vw, 120px); }
+    .footer-watermark .watermark-text { font-size: clamp(60px, 12vw, 140px); letter-spacing: 8px; }
+
+    /* Mobile menu improvements */
+    .mobile-menu a { font-size: 1.1rem; padding: 10px 20px; }
+    .mobile-menu .mob-cta { font-size: 0.85rem; padding: 12px 30px; }
   }
 
   @media (max-width: 480px) {
-    .awards-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(28px, 7.5vw, 38px); }
+    .rotating-wrapper { height: 1.4em; }
+    .rotating-words span { height: 1.4em; line-height: 1.4; }
+    .awards-grid { grid-template-columns: 1fr 1fr; }
     .community-cols { grid-template-columns: 1fr; }
+    .section-mission h2 { font-size: clamp(20px, 5vw, 30px); }
+    .cta-inner h2 { font-size: clamp(20px, 5vw, 28px); }
+    .btn-primary-gold { font-size: 14px; }
+    .btn-primary-gold .arrow-circle { width: 40px; height: 40px; }
+  }
+
+  @media (max-width: 360px) {
+    nav { padding: 0 12px; }
+    .hero { padding: 0 16px; }
+    .section-mission { padding: 40px 16px; }
+    .section-why { padding: 40px 16px; }
+    .section-community { padding: 40px 16px; }
+    .section-research { margin: 0 12px; padding: 28px 16px; }
+    .section-testimonials { padding: 40px 16px; }
+    .section-knowledge { padding: 0 16px 40px; }
+    .section-cta { padding: 40px 16px; }
+    .footer { padding: 0 16px; }
   }
 </style>
 </head>
@@ -1452,7 +1548,7 @@
       <h2>Sürdürülebilir marka inşası ve küresel ölçekleme</h2>
 
       <div class="value-item">
-        <span class="value-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg></span>
         <div>
           <h4>Sürdürülebilir Marka İnşası</h4>
           <p>Geçici taktikler yerine kalıcı marka değeri oluşturan uzun vadeli stratejiler. Marka kimliği, konumlandırma ve hikaye anlatımını tek çerçevede birleştiriyoruz.</p>
@@ -1460,7 +1556,7 @@
       </div>
 
       <div class="value-item">
-        <span class="value-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
         <div>
           <h4>Küresel Ölçekleme</h4>
           <p>Uluslararası pazarlara açılma, cross-border operasyonlar ve global büyüme stratejileri. Kültürel kodları evrensel marka diline çeviriyoruz.</p>
@@ -1468,7 +1564,7 @@
       </div>
 
       <div class="value-item">
-        <span class="value-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
         <div>
           <h4>Sektörel Standartları Belirleme</h4>
           <p>Endüstri normlarını yeniden tanımlayan araştırmalar, raporlar ve politika önerileri. Veri odaklı analizlerle referans noktası oluyoruz.</p>
@@ -1476,7 +1572,7 @@
       </div>
 
       <div class="value-item">
-        <span class="value-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
         <div>
           <h4>Ölçülebilir Değer Üretimi</h4>
           <p>Somut metriklerle izlenebilir ROI, büyüme oranları ve marka değeri artışı. Her stratejik hamlenin etkisini ölçülebilir KPI'lar ile takip ediyoruz.</p>
@@ -1547,21 +1643,21 @@
 
     <div class="research-features">
       <div class="research-feature">
-        <span class="feat-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
         <div>
           <h4>Akademik & Sektörel Eğitimler</h4>
           <p>Vizyon genişleten masterclass programları, seminerler ve ileri strateji eğitimleri.</p>
         </div>
       </div>
       <div class="research-feature">
-        <span class="feat-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></span>
         <div>
           <h4>Sınır Ötesi Ticaret ve Büyüme</h4>
           <p>Global operasyonel destek, pazaryeri stratejileri ve uluslararası ölçekleme altyapısı.</p>
         </div>
       </div>
       <div class="research-feature">
-        <span class="feat-icon">✳</span>
+        <span class="icon-star"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <div>
           <h4>Sektörel Farkındalık & Yönetici Mentörlüğü</h4>
           <p>Endüstri raporları, analitik yayınlar ve endüstri liderleriyle birebir koçluk.</p>
